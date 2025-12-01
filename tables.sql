@@ -3,7 +3,7 @@ CREATE TABLE Jockey(
     nom varchar(20) NOT NULL,
     prenom varchar(20) NOT NULL,
     nationalite varchar(20),
-    poids number(2,2),
+    poids number(4,2),
     discipline varchar(20) NOT NULL,
     gain number(8)
 );
@@ -15,7 +15,7 @@ CREATE TABLE Cheval(
     race varchar(20),
     age number(2), /*inutile*/
     sexe varchar(10) NOT NULL,
-    poids number(4,2),
+    poids number(5,2),
     discipline varchar(20) NOT NULL,
     gain number(8)
 );
@@ -94,6 +94,15 @@ CREATE TABLE Forme(
 );
 
 CREATE TABLE Duo(
+    duoid number(3) PRIMARY KEY, 
+    formeid number(3),
+    entraineurid number(2),
+    discipline varchar(20),
+    CONSTRAINT unq_duo UNIQUE (formeid, entraineurid), 
+    CONSTRAINT fk_duo_entraineur FOREIGN KEY (entraineurid) REFERENCES Entraineur(entraineurid),
+    CONSTRAINT fk_duo_forme FOREIGN KEY (formeid) REFERENCES Forme(formeid)
+);
+CREATE TABLE Duo(
     formeid number(3) PRIMARY KEY,
     entraineurid number(2) PRIMARY KEY,
     discipline varchar(20),
@@ -117,7 +126,7 @@ CREATE TABLE Mise(
 CREATE TABLE Inscription(
     inscriptionid number(3) PRIMARY KEY,
     participationid number(3),
-    duoid number(3), /*n'existe pas*/
+    duoid number(3), 
     statut varchar(20) NOT NULL,
     CONSTRAINT participationid FOREIGN KEY (participationid) REFERENCES Participation(participationid),
     CONSTRAINT parieurid FOREIGN KEY (parieurid) REFERENCES Parieur(parieurid)
