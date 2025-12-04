@@ -34,4 +34,5 @@ d.duoid = i.duoid AND
 i.participationid = p.participationid AND
 p.participationid = m.participationid
 GROUP BY c.id
-ORDER BY number_of_bet DESC;
+ORDER BY number_of_bet DESC
+LIMIT 5;
