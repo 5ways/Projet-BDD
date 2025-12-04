@@ -1,5 +1,5 @@
 -- Liste des chevaux maiden, ceux qui n’ont jamais remporté une course.
-SELECT c.id
+SELECT c.nom
 FROM Cheval c
 WHERE c.chevalid NOT IN (
     SELECT f.chevalid -- Select the ID of horses that have won
@@ -10,7 +10,7 @@ WHERE c.chevalid NOT IN (
     p.resultat = '1' -- Filter for winning participations
 );
 -- Liste des chevaux de plus de 5 ans n’ayant pas gagné durant les 12 derniers mois.
-SELECT c.id
+SELECT c.nom
 FROM Cheval c
 WHERE c.DateNaiss <= ADD_MONTHS(SYSDATE, -60) -- Horses 5 years (60 months) or older
 AND c.chevalid NOT IN (
@@ -26,13 +26,31 @@ AND c.chevalid NOT IN (
 
 -- Le TOP 5 des chevaux les plus populaires, ceux qui ont suscité le plus grand nombre de paris.
 -- Les chevaux n'ayant pas de paris assignés ne seront pas inclus dans le résultat de la requête
-SELECT c.id, count(m.parisid) as number_of_bet
+SELECT c.nom, count(m.parisid) as number_of_bet
 FROM Cheval c, Mise m, Inscription i, Forme f, Duo d, Participation p
 WHERE c.chevalid = f.chevalid AND
 f.duoid = d.duoid AND
 d.duoid = i.duoid AND
 i.participationid = p.participationid AND
 p.participationid = m.participationid
-GROUP BY c.id
+GROUP BY c.nom
 ORDER BY number_of_bet DESC
+LIMIT 5;
+
+--Le TOP 5 des duos jockeys/chevaux ayant le plus de 1ère places, qui courent toujours en 2025.
+SELECT f.jockeyid, f.chevalid, count(p.résultat) as number_of_wins
+FROM Forme f, Duo d, Inscription i, Participation p
+WHERE f.formeid = d.formeid AND
+d.duoid = i.duoid AND
+i.participationid = p.participationid AND
+p.resultat = '1' AND
+i.duoid in ( -- verify if the duo is actually in the list of 2025 runners
+    SELECT *
+    FROM Course co, Participation p2, Inscription i2
+    WHERE i2.participationid = p2.participationid AND
+    p2.courseid = co.courseid AND
+    co.date >= TO_DATE('2025-01-01')
+)
+GROUP BY f.jockeyid, f.chevalid
+ORDER BY number_of_wins DESC
 LIMIT 5;
