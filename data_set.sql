@@ -217,3 +217,338 @@ VALUES
 (38, 'Westerink', 'Richard', 'Hollandais', 0), -- Entraîne Etonnant
 (39, 'Roger', 'Sylvain', 'Francais', 0),       -- Entraîne Délia du Pommereux
 (40, 'Nivard', 'Franck', 'Francais', 0);       -- Entraîne aussi (ex: Kool du Caux jadis)
+
+INSERT INTO Propietaire (proprietaireid, ecurie, nom, prenom, nationalite, gain)
+VALUES 
+-- Galop
+(1, NULL, 'Wertheimer', 'Alain', 'Francais', 0),
+(2, NULL, 'Augustin-Normand', 'Gérard', 'Francais', 0),
+(3, NULL, 'Rothschild', 'Edouard', 'Francais', 0),
+(4, NULL, 'Bouchard', 'Jean-Louis', 'Francais', 0),
+(5, NULL, 'Pariente', 'Guy', 'Francais', 0),
+(6, NULL, 'Seroul', 'Jean-Claude', 'Francais', 0),
+(7, NULL, 'Caro', 'Antonio', 'Espagnol', 0),
+(8, NULL, 'Magnier', 'John', 'Irlandais', 0),       
+(9, NULL, 'Tabor', 'Michael', 'Anglais', 0),         
+(10, NULL, 'Smith', 'Derrick', 'Anglais', 0),        
+(11, 'Godolphin', 'Al Maktoum', 'Mohammed', 'Emirati', 0), 
+(12, 'Aga Khan Studs', 'Aga Khan', 'Karim', 'Francais', 0),
+(13, 'Juddmonte Farms', NULL, NULL, 'Saoudien', 0),
+(14, 'Al Shaqab Racing', 'Al Thani', 'Joaan', 'Qatari', 0),
+(15, 'Wathnan Racing', 'Al Thani', 'Tamim', 'Qatari', 0),
+(16, 'White Birch Farm', 'Brant', 'Peter', 'Americain', 0),
+(17, 'Gousserie Racing', 'Chehboub', 'Pauline', 'Francais', 0),
+(18, 'Ecurie des Monceaux', 'Bozo', 'Henri', 'Francais', 0),
+(19, 'Niarchos Family', 'Niarchos', 'Maria', 'Grec', 0),
+(20, 'Yeguada Centurion', NULL, NULL, 'Espagnol', 0),
+
+-- Trot
+(21, 'Ecurie des Charmes', 'Urano', 'Lucien', 'Francais', 0),
+(22, 'Ecurie Duvaldestin', 'Duvaldestin', 'Thierry', 'Francais', 0),
+(23, 'Ecurie Luck', 'Luck', 'Jean', 'Francais', 0),
+(24, 'Ecurie Quick Star', 'Esper', 'Maik', 'Francais', 0),
+(25, 'Ecurie Hunter Valley', 'Millet', 'Matthieu', 'Francais', 0),
+(26, 'Ecurie Vedaquais', 'Allaire', 'Philippe', 'Francais', 0),
+(27, 'Ecurie Le Tremont', 'Souloy', 'Fabrice', 'Francais', 0),
+(28, 'Ecurie Griff', 'Griff', 'Yannick', 'Francais', 0),
+(29, 'Ecurie Dry', 'Dry', 'Gérard', 'Francais', 0),
+(30, 'Ecurie Rythm', 'Bazire', 'Jean-Michel', 'Francais', 0),
+(31, NULL, 'Pilarski', 'Pierre', 'Francais', 0),
+(32, NULL, 'Barjon', 'Jean-Pierre', 'Francais', 0),
+(33, NULL, 'Bernereau', 'Jean-Pierre', 'Francais', 0),
+(34, NULL, 'Foulon', 'Jacques', 'Francais', 0),
+(35, NULL, 'Dewulf', 'Géry', 'Belge', 0),
+(36, NULL, 'Seche', 'Joël', 'Francais', 0),
+(37, 'Scuderia Bivans', 'Somma', 'Antonio', 'Italien', 0),
+(38, 'Stall Zet', 'Reden', 'Daniel', 'Suedois', 0),
+(39, 'Courant AB', 'Strom', 'Anders', 'Suedois', 0),
+(40, 'Stall Bryssel', NULL, NULL, 'Suedois', 0);
+
+
+INSERT INTO Appartient (proprietaireid, chevalid, part)
+VALUES 
+-- CHEVAUX GALOP (1-40)
+(7, 1, 100),   -- Giavellotto (Gousserie/Caro)
+(16, 2, 100),  -- White Birch (White Birch Farm)
+(1, 3, 100),   -- Arrow Eagle (Wertheimer)
+(1, 4, 100),   -- Sosie (Wertheimer)
+(8, 5, 34),    -- Los Angeles (Magnier)
+(9, 5, 33),    -- Los Angeles (Tabor)
+(10, 5, 33),   -- Los Angeles (Smith)
+(1, 6, 100),   -- Bizantine Dream
+(1, 7, 100),   -- Estrange
+(13, 8, 100),  -- Quisisana (Juddmonte)
+(13, 9, 100),  -- Kalpana (Juddmonte)
+(1, 10, 100),  -- Aventure
+(12, 11, 100), -- Daryz (Aga Khan)
+(12, 12, 100), -- Leffard
+(12, 13, 100), -- Cualificar
+(11, 14, 100), -- Hotazhell (Godolphin)
+(15, 15, 100), -- Croix du Nord (Wathnan)
+(5, 16, 100),  -- Alohi Alii (Pariente)
+(19, 17, 100), -- Minnie Hauk (Niarchos)
+(7, 18, 100),  -- Gezora (Caro)
+(16, 19, 100), -- Il Est Français (White Birch)
+(17, 21, 100), -- Juntos Ganamos (Gousserie)
+(4, 22, 100),  -- Télème (Bouchard)
+(4, 23, 100),  -- Jelitobum
+(8, 24, 34),   -- Icare Allen (Coolmore 1)
+(9, 24, 33),   -- Icare Allen (Coolmore 2)
+(10, 24, 33),  -- Icare Allen (Coolmore 3)
+(17, 25, 50),  -- Jippie du Cerisier (Gousserie)
+(7, 25, 50),   -- Jippie du Cerisier (Caro)
+(3, 26, 100),  -- Raffles Face (Rothschild)
+(5, 27, 100),  -- Hermès Baie (Pariente)
+(18, 28, 50),  -- Goliath du Berlais (Monceaux)
+(16, 28, 50),  -- Goliath du Berlais (White Birch)
+(20, 29, 50),  -- Big Rock (Centurion)
+(18, 29, 50),  -- Big Rock (Monceaux)
+(4, 30, 50),   -- Feed The Flame (Bouchard)
+(2, 30, 50),   -- Feed The Flame (Augustin-Normand)
+(20, 31, 100), -- Blue Rose Cen
+(17, 32, 50),  -- Ace Impact (Gousserie)
+(2, 32, 50),   -- Ace Impact (Augustin-Normand)
+(17, 33, 50),  -- Horizon Dore (Gousserie)
+(2, 33, 50),   -- Horizon Dore (Augustin-Normand)
+(5, 34, 50),   -- Simca Mille (Pariente)
+(6, 34, 50),   -- Simca Mille (Seroul)
+(2, 35, 50),   -- Astre Royal (Augustin-Normand)
+(3, 35, 50),   -- Astre Royal (Rothschild)
+(18, 36, 100), -- Quintessia (Monceaux)
+(15, 37, 100), -- Emerald Falcon (Wathnan)
+(1, 38, 100),  -- Tornado Lys
+(3, 39, 100),  -- Saphir d'Empire
+(11, 40, 100), -- Vol de Minuit
+
+-- CHEVAUX TROT (41-80)
+(22, 41, 100), -- Idao de Tillard
+(21, 42, 50),  -- Horsy Dream (Charmes)
+(25, 42, 50),  -- Horsy Dream (Hunter Valley)
+(32, 43, 100), -- Hooker Berry
+(23, 44, 100), -- Hokkaido Jiel
+(25, 45, 100), -- Go On Boy
+(21, 46, 100), -- Hussard du Landret
+(26, 47, 100), -- Italiano Vero
+(26, 48, 100), -- Izoard Vedaquais
+(25, 49, 100), -- Gu d'Héripré
+(21, 50, 100), -- Emeraude de Bais
+(37, 51, 100), -- Vivid Wise As
+(38, 52, 100), -- San Moteur
+(37, 53, 100), -- Ampia Mede SM
+(39, 54, 100), -- Hail Mary
+(38, 55, 100), -- Don Fanucci Zet
+(28, 56, 100), -- Vernissage Grif
+(39, 57, 100), -- Joviality
+(24, 60, 100), -- Bengurion Jet
+(21, 61, 100), -- Jushua Tree
+(22, 62, 100), -- Just A Gigolo
+(23, 63, 100), -- Koctel du Dain
+(29, 64, 100), -- Kana de Beylev
+(27, 65, 100), -- Krack Time Atout
+(30, 66, 100), -- Kyrielle
+(22, 67, 100), -- Liza Josselyn
+(25, 68, 100), -- Luciano Menuet
+(36, 69, 100), -- Lovino Bello
+(32, 70, 100), -- Jack Tonic
+(21, 71, 100), -- Etonnant
+(34, 72, 100), -- Délia du Pommereux
+(27, 73, 100), -- Diable de Vauvert
+(30, 74, 100), -- Elie de Beaufour
+(31, 75, 50),  -- Fakir de Mahey (Pilarski)
+(33, 75, 50),  -- Fakir de Mahey (Bernereau)
+(30, 76, 50),  -- Ganay de Banville (Rythm)
+(31, 76, 50),  -- Ganay de Banville (Pilarski)
+(24, 77, 50),  -- Gaspar de Brion (Quick Star)
+(34, 77, 50),  -- Gaspar de Brion (Foulon)
+(25, 78, 70),  -- Happy Valley (Hunter Valley)
+(23, 78, 30),  -- Happy Valley (Luck)
+(35, 79, 50),  -- Inmarosa (Dewulf)
+(21, 79, 50),  -- Inmarosa (Charmes)
+(30, 80, 50),  -- Ideal du Pommeau (Bazire)
+(26, 80, 50);  -- Ideal du Pommeau (Vedaquais)
+
+
+INSERT INTO Organisateur (organisateurid, nom, discipline, tresorerie)
+VALUES (1, 'France Galop', 'Galop', 50000000),
+(2, 'Société du Trotteur Français', 'Trot', 45000000), 
+(3, 'Pari Mutuel Urbain', 'Mixte', 80000000),
+(4, 'British Horseracing Authority', 'Galop', 20000000), 
+(5, 'Horse Racing Ireland', 'Galop', 15000000),      
+(6, 'Dubai Racing Club', 'Galop', 90000000),       
+(7, 'Japan Racing Association', 'Galop', 85000000), 
+(8, 'The Jockey Club USA', 'Galop', 30000000),     
+(9, 'Hong Kong Jockey Club', 'Galop', 95000000),   
+(10, 'Deutscher Galopp', 'Galop', 8000000),        
+(11, 'Saudi Jockey Club', 'Galop', 99000000),      
+(12, 'Racing Victoria Limited', 'Galop', 12000000), 
+(13, 'Svensk Travsport', 'Trot', 18000000),        
+(14, 'US Trotting Association', 'Trot', 25000000), 
+(15, 'Ministero Politiche Agricole', 'Trot', 10000000), 
+(16, 'Union Européenne du Trot', 'Trot', 5000000),  
+(17, 'Société des Courses de Deauville', 'Galop', 6000000),
+(18, 'Société des Courses Côte d''Azur', 'Mixte', 5000000),  
+(19, 'Société des Courses de Pau', 'Galop', 3000000),    
+(20, 'Société des Courses de Vichy', 'Mixte', 3500000),
+(21, 'Société des Courses de Craon', 'Mixte', 2000000),     
+(22, 'Société des Courses de Nantes', 'Mixte', 1500000),
+(23, 'Société des Courses de Lyon', 'Mixte', 2000000),
+(24, 'Société Sportive de Marseille', 'Mixte', 1800000),
+(25, 'Société des Courses de Cabourg', 'Trot', 2500000),    
+(26, 'Société des Courses de Laval', 'Trot', 2200000),
+(27, 'Société des Courses d''Angers', 'Mixte', 1600000),
+(28, 'Société des Courses de Caen', 'Trot', 2100000),
+(29, 'Société des Courses de Reims', 'Trot', 1400000),      
+(30, 'Société des Courses d''Amiens', 'Trot', 1300000);
+
+
+INSERT INTO Course (courseid, nom, date_c, discipline, sousdiscipline, distance, groupe, cashprize, lieu, organisateurid)
+VALUES
+-- === RÉUNION TEST 1 : VINCENNES (26 Janvier 2025) ===
+(51, 'Prix Camille Blaisot', '2025-01-26 13:50', 'Trot', 'Monté', 2175, 2, 120000, 'Vincennes', 2),
+(52, 'Prix Charles Tiercelin', '2025-01-26 14:25', 'Trot', 'Attelé', 2700, 2, 120000, 'Vincennes', 2),
+(53, 'Prix Bold Eagle', '2025-01-26 15:00', 'Trot', 'Attelé', 2100, 1, 300000, 'Vincennes', 2),
+(54, 'Prix Ourasi', '2025-01-26 15:35', 'Trot', 'Attelé', 2700, 1, 300000, 'Vincennes', 2),
+(2, 'Prix d''Amérique Legend Race', '2025-01-26 16:25', 'Trot', 'Attelé', 2700, 1, 1000000, 'Vincennes', 2),
+-- === RÉUNION TEST 2 : PARISLONGCHAMP (5 Octobre 2025) ===
+(55, 'Prix de l''Abbaye', '2025-10-05 14:15', 'Galop', 'Plat', 1000, 1, 350000, 'ParisLongchamp', 1),
+(56, 'Prix Marcel Boussac', '2025-10-05 14:55', 'Galop', 'Plat', 1600, 1, 400000, 'ParisLongchamp', 1),
+(57, 'Prix Jean-Luc Lagardère', '2025-10-05 15:35', 'Galop', 'Plat', 1400, 1, 400000, 'ParisLongchamp', 1),
+(1, 'Prix de l''Arc de Triomphe', '2025-10-05 16:05', 'Galop', 'Plat', 2400, 1, 5000000, 'ParisLongchamp', 1),
+(58, 'Prix de l''Opéra', '2025-10-05 16:50', 'Galop', 'Plat', 2000, 1, 500000, 'ParisLongchamp', 1),
+-- === RÉUNION TEST 3 : AUTEUIL (18 Mai 2025) ===
+(59, 'Prix Ferdinand Dufaure', '2025-05-18 14:40', 'Obstacle', 'Steeple', 4400, 1, 350000, 'Auteuil', 1),
+(60, 'Prix Alain du Breil', '2025-05-18 15:30', 'Obstacle', 'Haies', 3900, 1, 250000, 'Auteuil', 1),
+(36, 'Grand Steeple-Chase de Paris', '2025-05-18 16:00', 'Obstacle', 'Steeple', 6000, 1, 850000, 'Auteuil', 1),
+-- === CLASH HORAIRE (Pour test conflit) ===
+(3, 'Grand Prix du PMU', '2025-05-18 15:15', 'Galop', 'Plat', 1600, 2, 120000, 'ParisLongchamp', 3),
+-- courses
+(4, 'Epsom Derby', '2025-06-07 16:30', 'Galop', 'Plat', 2420, 1, 1800000, 'Epsom Downs', 4),
+(5, 'Irish Champion Stakes', '2025-09-13 15:45', 'Galop', 'Plat', 2000, 1, 1250000, 'Leopardstown', 5),
+(6, 'Dubai World Cup', '2025-04-05 20:35', 'Galop', 'Plat', 2000, 1, 12000000, 'Meydan', 6),
+(7, 'Japan Cup', '2024-11-24 15:40', 'Galop', 'Plat', 2400, 1, 6500000, 'Tokyo', 7),
+(8, 'Breeders Cup Turf', '2024-11-02 17:40', 'Galop', 'Plat', 2400, 1, 4000000, 'Del Mar', 8),
+(9, 'Hong Kong Vase', '2024-12-08 14:00', 'Galop', 'Plat', 2400, 1, 2500000, 'Sha Tin', 9),
+(10, 'Deutsches Derby', '2025-07-06 16:15', 'Galop', 'Plat', 2400, 1, 650000, 'Hambourg', 10),
+(11, 'Saudi Cup', '2025-02-22 20:40', 'Galop', 'Plat', 1800, 1, 20000000, 'Riyadh', 11),
+(12, 'Melbourne Cup', '2024-11-05 15:00', 'Galop', 'Plat', 3200, 1, 5000000, 'Flemington', 12),
+(13, 'Elitloppet Finale', '2025-05-25 17:30', 'Trot', 'Attelé', 1609, 1, 500000, 'Solvalla', 13),
+(14, 'Hambletonian', '2025-08-02 15:35', 'Trot', 'Attelé', 1609, 1, 1000000, 'Meadowlands', 14),
+(15, 'Grand Prix de la Loterie', '2025-05-01 14:50', 'Trot', 'Attelé', 1600, 1, 800000, 'Naples', 15),
+(16, 'Grand Prix de l''UET', '2025-10-12 16:00', 'Trot', 'Attelé', 2140, 1, 400000, 'Vincennes', 16),
+(17, 'Prix Rothschild', '2025-08-03 15:55', 'Galop', 'Plat', 1600, 1, 300000, 'Deauville', 17),
+(18, 'Prix Jacques Le Marois', '2025-08-17 16:25', 'Galop', 'Plat', 1600, 1, 1000000, 'Deauville', 17),
+(19, 'Grand Prix de la Riviera', '2025-02-09 13:50', 'Galop', 'Plat', 2000, 0, 60000, 'Cagnes-sur-Mer', 18),
+(20, 'Grand Criterium de Vitesse', '2025-03-09 15:15', 'Trot', 'Attelé', 1609, 1, 200000, 'Cagnes-sur-Mer', 18),
+(21, 'Grand Prix de Pau', '2025-01-19 15:15', 'Obstacle', 'Steeple', 5300, 3, 154000, 'Pau', 19),
+(22, 'Grande Course de Haies de Pau', '2025-02-02 14:35', 'Obstacle', 'Haies', 4100, 0, 105000, 'Pau', 19),
+(23, 'Grand Prix de Vichy', '2025-07-16 20:15', 'Galop', 'Plat', 2000, 3, 80000, 'Vichy', 20),
+(24, 'Grand Cross de Craon', '2025-09-07 16:30', 'Obstacle', 'Cross', 6000, 0, 75000, 'Craon', 21),
+(25, 'GNT Etape de Nantes', '2024-11-06 13:50', 'Trot', 'Attelé', 3000, 3, 90000, 'Nantes', 22),
+(26, 'Criterium de Lyon', '2024-09-19 14:00', 'Galop', 'Plat', 1600, 0, 60000, 'Lyon-Parilly', 23),
+(27, 'GNT Etape de Marseille', '2025-03-26 13:50', 'Trot', 'Attelé', 3000, 3, 90000, 'Marseille-Borely', 24),
+(28, 'Grand Prix de la Ville de Cabourg', '2025-07-18 20:15', 'Trot', 'Attelé', 2750, 3, 50000, 'Cabourg', 25),
+(29, 'Grand Prix de Laval', '2024-11-01 15:15', 'Trot', 'Attelé', 2850, 3, 70000, 'Laval', 26),
+(30, 'Grand Prix d''Angers Loire', '2025-04-02 13:50', 'Trot', 'Attelé', 3100, 3, 60000, 'Angers', 27),
+(31, 'Prix des Ducs de Normandie', '2025-05-14 13:50', 'Trot', 'Attelé', 2450, 2, 150000, 'Caen', 28),
+(32, 'GNT Etape de Reims', '2025-06-18 13:50', 'Trot', 'Attelé', 2550, 3, 90000, 'Reims', 29),
+(33, 'GNT Etape 1 Amiens', '2025-03-05 13:50', 'Trot', 'Attelé', 2900, 3, 90000, 'Amiens', 30),
+(34, 'Prix du Jockey Club', '2025-06-01 16:05', 'Galop', 'Plat', 2100, 1, 1500000, 'Chantilly', 1),
+(35, 'Prix de Diane', '2025-06-15 16:05', 'Galop', 'Plat', 2100, 1, 1000000, 'Chantilly', 1),
+(37, 'Grande Course de Haies', '2025-05-17 15:15', 'Obstacle', 'Haies', 5100, 1, 400000, 'Auteuil', 1),
+(38, 'Prix Ganay', '2025-04-27 15:50', 'Galop', 'Plat', 2100, 1, 300000, 'ParisLongchamp', 1),
+(39, 'Poule d''Essai des Poulains', '2025-05-11 15:15', 'Galop', 'Plat', 1600, 1, 650000, 'ParisLongchamp', 1),
+(40, 'Prix de France', '2025-02-09 16:25', 'Trot', 'Attelé', 2100, 1, 400000, 'Vincennes', 2),
+(41, 'Prix de Paris', '2025-02-23 15:15', 'Trot', 'Attelé', 4150, 1, 400000, 'Vincennes', 2),
+(42, 'Prix de Cornulier', '2025-01-19 15:15', 'Trot', 'Monté', 2700, 1, 700000, 'Vincennes', 2),
+(43, 'Criterium Continental', '2024-12-22 15:15', 'Trot', 'Attelé', 2100, 1, 240000, 'Vincennes', 2),
+(44, 'Prix de Normandie', '2025-06-22 15:15', 'Trot', 'Monté', 3000, 1, 240000, 'Vincennes', 2),
+(45, 'Prix Exbury', '2025-03-16 14:30', 'Galop', 'Plat', 2000, 3, 80000, 'Saint-Cloud', 1),
+(46, 'Prix de la Porte Maillot', '2025-06-19 18:00', 'Galop', 'Plat', 1400, 3, 80000, 'ParisLongchamp', 1),
+(47, 'Prix de Bretagne', '2024-11-17 15:15', 'Trot', 'Attelé', 2700, 2, 120000, 'Vincennes', 2),
+(48, 'Prix du Bourbonnais', '2024-12-08 15:15', 'Trot', 'Attelé', 2850, 2, 120000, 'Vincennes', 2),
+(49, 'Prix de Bourgogne', '2024-12-29 15:15', 'Trot', 'Attelé', 2100, 2, 120000, 'Vincennes', 2),
+(50, 'Prix de Belgique', '2025-01-12 15:15', 'Trot', 'Attelé', 2850, 2, 120000, 'Vincennes', 2);
+
+
+INSERT INTO Participation (participationid, courseid, resultat, statut)
+VALUES 
+-- Course 1 (Arc de Triomphe)
+(1, 1, '1er', 'Terminé'), (2, 1, '2eme', 'Terminé'), (3, 1, '3eme', 'Terminé'), (4, 1, '4eme', 'Terminé'), (5, 1, '5eme', 'Terminé'),
+-- Course 2 (Amérique)
+(6, 2, '1er', 'Terminé'), (7, 2, '2eme', 'Terminé'), (8, 2, '3eme', 'Terminé'), (9, 2, '4eme', 'Terminé'), (10, 2, '5eme', 'Terminé'),
+-- Course 3
+(11, 3, '1er', 'Terminé'), (12, 3, '2eme', 'Terminé'), (13, 3, '3eme', 'Terminé'), (14, 3, '4eme', 'Terminé'), (15, 3, '5eme', 'Terminé'),
+-- Course 4
+(16, 4, '1er', 'Terminé'), (17, 4, '2eme', 'Terminé'), (18, 4, '3eme', 'Terminé'), (19, 4, '4eme', 'Terminé'), (20, 4, '5eme', 'Terminé'),
+-- Course 5
+(21, 5, '1er', 'Terminé'), (22, 5, '2eme', 'Terminé'), (23, 5, '3eme', 'Terminé'), (24, 5, '4eme', 'Terminé'), (25, 5, '5eme', 'Terminé'),
+-- Course 6
+(26, 6, '1er', 'Terminé'), (27, 6, '2eme', 'Terminé'), (28, 6, '3eme', 'Terminé'), (29, 6, '4eme', 'Terminé'), (30, 6, '5eme', 'Terminé'),
+-- Course 7
+(31, 7, '1er', 'Terminé'), (32, 7, '2eme', 'Terminé'), (33, 7, '3eme', 'Terminé'), (34, 7, '4eme', 'Terminé'), (35, 7, '5eme', 'Terminé'),
+-- Course 8
+(36, 8, '1er', 'Terminé'), (37, 8, '2eme', 'Terminé'), (38, 8, '3eme', 'Terminé'), (39, 8, '4eme', 'Terminé'), (40, 8, '5eme', 'Terminé'),
+-- Course 9
+(41, 9, '1er', 'Terminé'), (42, 9, '2eme', 'Terminé'), (43, 9, '3eme', 'Terminé'), (44, 9, '4eme', 'Terminé'), (45, 9, '5eme', 'Terminé'),
+-- Course 10
+(46, 10, '1er', 'Terminé'), (47, 10, '2eme', 'Terminé'), (48, 10, '3eme', 'Terminé'), (49, 10, '4eme', 'Terminé'), (50, 10, '5eme', 'Terminé'),
+-- Course 11
+(51, 11, '1er', 'Terminé'), (52, 11, '2eme', 'Terminé'), (53, 11, '3eme', 'Terminé'), (54, 11, '4eme', 'Terminé'), (55, 11, '5eme', 'Terminé'),
+-- Course 12
+(56, 12, '1er', 'Terminé'), (57, 12, '2eme', 'Terminé'), (58, 12, '3eme', 'Terminé'), (59, 12, '4eme', 'Terminé'), (60, 12, '5eme', 'Terminé'),
+-- Course 13
+(61, 13, '1er', 'Terminé'), (62, 13, '2eme', 'Terminé'), (63, 13, '3eme', 'Terminé'), (64, 13, '4eme', 'Terminé'), (65, 13, '5eme', 'Terminé'),
+-- Course 14
+(66, 14, '1er', 'Terminé'), (67, 14, '2eme', 'Terminé'), (68, 14, '3eme', 'Terminé'), (69, 14, '4eme', 'Terminé'), (70, 14, '5eme', 'Terminé'),
+-- Course 15
+(71, 15, '1er', 'Terminé'), (72, 15, '2eme', 'Terminé'), (73, 15, '3eme', 'Terminé'), (74, 15, '4eme', 'Terminé'), (75, 15, '5eme', 'Terminé'),
+-- Course 16
+(76, 16, '1er', 'Terminé'), (77, 16, '2eme', 'Terminé'), (78, 16, '3eme', 'Terminé'), (79, 16, '4eme', 'Terminé'), (80, 16, '5eme', 'Terminé'),
+-- Course 17
+(81, 17, '1er', 'Terminé'), (82, 17, '2eme', 'Terminé'), (83, 17, '3eme', 'Terminé'), (84, 17, '4eme', 'Terminé'), (85, 17, '5eme', 'Terminé'),
+-- Course 18
+(86, 18, '1er', 'Terminé'), (87, 18, '2eme', 'Terminé'), (88, 18, '3eme', 'Terminé'), (89, 18, '4eme', 'Terminé'), (90, 18, '5eme', 'Terminé'),
+-- Course 19
+(91, 19, '1er', 'Terminé'), (92, 19, '2eme', 'Terminé'), (93, 19, '3eme', 'Terminé'), (94, 19, '4eme', 'Terminé'), (95, 19, '5eme', 'Terminé'),
+-- Course 20
+(96, 20, '1er', 'Terminé'), (97, 20, '2eme', 'Terminé'), (98, 20, '3eme', 'Terminé'), (99, 20, '4eme', 'Terminé'), (100, 20, '5eme', 'Terminé'),
+-- Course 21
+(101, 21, '1er', 'Terminé'), (102, 21, '2eme', 'Terminé'), (103, 21, '3eme', 'Terminé'), (104, 21, '4eme', 'Terminé'), (105, 21, '5eme', 'Terminé'),
+-- Course 22
+(106, 22, '1er', 'Terminé'), (107, 22, '2eme', 'Terminé'), (108, 22, '3eme', 'Terminé'), (109, 22, '4eme', 'Terminé'), (110, 22, '5eme', 'Terminé'),
+-- Course 23
+(111, 23, '1er', 'Terminé'), (112, 23, '2eme', 'Terminé'), (113, 23, '3eme', 'Terminé'), (114, 23, '4eme', 'Terminé'), (115, 23, '5eme', 'Terminé'),
+-- Course 24
+(116, 24, '1er', 'Terminé'), (117, 24, '2eme', 'Terminé'), (118, 24, '3eme', 'Terminé'), (119, 24, '4eme', 'Terminé'), (120, 24, '5eme', 'Terminé'),
+-- Course 25
+(121, 25, '1er', 'Terminé'), (122, 25, '2eme', 'Terminé'), (123, 25, '3eme', 'Terminé'), (124, 25, '4eme', 'Terminé'), (125, 25, '5eme', 'Terminé'),
+-- Course 26
+(126, 26, '1er', 'Terminé'), (127, 26, '2eme', 'Terminé'), (128, 26, '3eme', 'Terminé'), (129, 26, '4eme', 'Terminé'), (130, 26, '5eme', 'Terminé'),
+-- Course 27
+(131, 27, '1er', 'Terminé'), (132, 27, '2eme', 'Terminé'), (133, 27, '3eme', 'Terminé'), (134, 27, '4eme', 'Terminé'), (135, 27, '5eme', 'Terminé'),
+-- Course 28
+(136, 28, '1er', 'Terminé'), (137, 28, '2eme', 'Terminé'), (138, 28, '3eme', 'Terminé'), (139, 28, '4eme', 'Terminé'), (140, 28, '5eme', 'Terminé'),
+-- Course 29
+(141, 29, '1er', 'Terminé'), (142, 29, '2eme', 'Terminé'), (143, 29, '3eme', 'Terminé'), (144, 29, '4eme', 'Terminé'), (145, 29, '5eme', 'Terminé'),
+-- Course 30
+(146, 30, '1er', 'Terminé'), (147, 30, '2eme', 'Terminé'), (148, 30, '3eme', 'Terminé'), (149, 30, '4eme', 'Terminé'), (150, 30, '5eme', 'Terminé'),
+-- Course 31
+(151, 31, '1er', 'Terminé'), (152, 31, '2eme', 'Terminé'), (153, 31, '3eme', 'Terminé'), (154, 31, '4eme', 'Terminé'), (155, 31, '5eme', 'Terminé'),
+-- Course 32
+(156, 32, '1er', 'Terminé'), (157, 32, '2eme', 'Terminé'), (158, 32, '3eme', 'Terminé'), (159, 32, '4eme', 'Terminé'), (160, 32, '5eme', 'Terminé'),
+-- Course 33
+(161, 33, '1er', 'Terminé'), (162, 33, '2eme', 'Terminé'), (163, 33, '3eme', 'Terminé'), (164, 33, '4eme', 'Terminé'), (165, 33, '5eme', 'Terminé'),
+-- Course 34
+(166, 34, '1er', 'Terminé'), (167, 34, '2eme', 'Terminé'), (168, 34, '3eme', 'Terminé'), (169, 34, '4eme', 'Terminé'), (170, 34, '5eme', 'Terminé'),
+-- Course 35
+(171, 35, '1er', 'Terminé'), (172, 35, '2eme', 'Terminé'), (173, 35, '3eme', 'Terminé'), (174, 35, '4eme', 'Terminé'), (175, 35, '5eme', 'Terminé'),
+-- Course 36
+(176, 36, '1er', 'Terminé'), (177, 36, '2eme', 'Terminé'), (178, 36, '3eme', 'Terminé'), (179, 36, '4eme', 'Terminé'), (180, 36, '5eme', 'Terminé'),
+-- Course 37
+(181, 37, '1er', 'Terminé'), (182, 37, '2eme', 'Terminé'), (183, 37, '3eme', 'Terminé'), (184, 37, '4eme', 'Terminé'), (185, 37, '5eme', 'Terminé'),
+-- Course 38
+(186, 38, '1er', 'Terminé'), (187, 38, '2eme', 'Terminé'), (188, 38, '3eme', 'Terminé'), (189, 38, '4eme', 'Terminé'), (190, 38, '5eme', 'Terminé'),
+-- Course 39
+(191, 39, '1er', 'Terminé'), (192, 39, '2eme', 'Terminé'), (193, 39, '3eme', 'Terminé'), (194, 39, '4eme', 'Terminé'), (195, 39, '5eme', 'Terminé'),
+-- Course 40
+(196, 40, '1er', 'Terminé'), (197, 40, '2eme', 'Terminé'), (198, 40, '3eme', 'Terminé'), (199, 40, '4eme', 'Terminé'), (200, 40, '5eme', 'Terminé');
