@@ -30,21 +30,25 @@ CREATE TABLE Entraineur(
 
 CREATE TABLE Propietaire(
     proprietaireid number(3) PRIMARY KEY,
-    nom varchar(20) NOT NULL,
-    prenom varchar(20) NOT NULL,
-    gain number(8)
+    ecurie varchar(50),   
+    nom varchar(30),          
+    prenom varchar(30),      
+    nationalite varchar(20),   
+    gain number(8) DEFAULT 0, 
+   
+    CONSTRAINT check_identite CHECK (ecurie IS NOT NULL OR nom IS NOT NULL)
 );
 
 CREATE TABLE Organisateur(
     organisateurid number(2) PRIMARY KEY,
-    nom varchar(20) NOT NULL,
+    nom varchar(40) NOT NULL,
     discipline varchar(20)NOT NULL,
     tresorerie number(8) NOT NULL
 );
 
 CREATE TABLE Course(
     courseid number(2) PRIMARY KEY,
-    nom varchar(20) NOT NULL,
+    nom varchar(50) NOT NULL,
     date_c date NOT NULL,
     discipline varchar(20) NOT NULL,
     sousdiscipline varchar(20) NOT NULL,
@@ -56,11 +60,6 @@ CREATE TABLE Course(
     CONSTRAINT organisateurid FOREIGN KEY (organisateurid) REFERENCES Organisateur(organisateurid)
 );
 
-CREATE TABLE SocieteDeParis(
-    sdpid number(2) PRIMARY KEY,
-    nom varchar(20) NOT NULL,
-    tresorerie number(8) NOT NULL
-);
 
 CREATE TABLE Parieur(
     parieurid number(2) PRIMARY KEY,
@@ -101,12 +100,6 @@ CREATE TABLE Duo(
     CONSTRAINT unq_duo UNIQUE (formeid, entraineurid), 
     CONSTRAINT fk_duo_entraineur FOREIGN KEY (entraineurid) REFERENCES Entraineur(entraineurid),
     CONSTRAINT fk_duo_forme FOREIGN KEY (formeid) REFERENCES Forme(formeid)
-);
-CREATE TABLE Duo(
-    formeid number(3) PRIMARY KEY,
-    entraineurid number(2) PRIMARY KEY,
-    discipline varchar(20),
-    CONSTRAINT entraineurid FOREIGN KEY (entraineurid) REFERENCES Entraineur(entraineurid)
 );
 
 CREATE TABLE Parier(
