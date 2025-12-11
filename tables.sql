@@ -1,4 +1,4 @@
-CREATE TABLE Jockey(
+    CREATE TABLE Jockey(
     jockeyid number(2) PRIMARY KEY,
     nom varchar(20) NOT NULL,
     prenom varchar(20) NOT NULL,
@@ -84,27 +84,27 @@ CREATE TABLE Duo(
     chevalid number(2),
     entraineurid number(2),
     discipline varchar(20),
-    CONSTRAINT unq_duo UNIQUE (duoid, entraineurid), 
     CONSTRAINT fk_duo_jockey FOREIGN KEY (jockeyid) REFERENCES Jockey(jockeyid),
     CONSTRAINT fk_duo_cheval FOREIGN KEY (chevalid) REFERENCES Cheval(chevalid),
-    CONSTRAINT fk_duo_entraineur FOREIGN KEY (entraineurid) REFERENCES Entraineur(entraineurid)
+    CONSTRAINT fk_duo_entraineur FOREIGN KEY (entraineurid) REFERENCES Entraineur(entraineurid),
+    CONSTRAINT unq_team UNIQUE (chevalid, jockeyid, entraineurid)
 );
 
 
 CREATE TABLE Inscription(
-    inscriptionid number(3) PRIMARY KEY
     participationid number(3),
     duoid number(3), 
     statut varchar(20) NOT NULL,
+    PRIMARY KEY (participationid, duoid),
     CONSTRAINT fk_inscrip_participation FOREIGN KEY (participationid) REFERENCES Participation(participationid),
     CONSTRAINT fk_inscrip_duo FOREIGN KEY (duoid) REFERENCES Duo(duoid)
 );
 
 CREATE TABLE Appartient(
-    appartientid number(3) PRIMARY KEY
     proprietaireid number(3),
     chevalid number(2),
     part number(3),
+    PRIMARY KEY (proprietaireid, chevalid),
     CONSTRAINT fk_app_proprietaire FOREIGN KEY (proprietaireid) REFERENCES Propietaire(proprietaireid),
     CONSTRAINT fk_app_cheval FOREIGN KEY (chevalid) REFERENCES Cheval(chevalid)
 );
@@ -119,4 +119,5 @@ CREATE TABLE Paris(
     CONSTRAINT fk_paris_participation FOREIGN KEY (participationid) REFERENCES Participation(participationid),
     CONSTRAINT fk_paris_parieur FOREIGN KEY (parieurid) REFERENCES Parieur(parieurid)
 );
+
 
