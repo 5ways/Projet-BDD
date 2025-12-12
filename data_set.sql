@@ -552,3 +552,110 @@ VALUES
 -- Course 40
 (196, 40, '1er', 'Terminé'), (197, 40, '2eme', 'Terminé'), (198, 40, '3eme', 'Terminé'), (199, 40, '4eme', 'Terminé'), (200, 40, '5eme', 'Terminé');
 
+
+INSERT INTO Duo (duoid, chevalid, jockeyid, entraineurid, discipline) VALUES
+-- Prix de l'arc 2025
+(1, 1, 12, 6, 'Galop'),
+(2, 2, 13, 7, 'Galop'),
+(3, 3, 14, 3, 'Galop'),
+(4, 4, 7, 13, 'Galop'),
+(5, 5, 10, 2, 'Galop'),
+(6, 6, 16, 17, 'Galop'),
+(7, 7, 6, 12, 'Galop'),
+(8, 8, 3, 18, 'Galop'),
+(9, 9, 11, 1, 'Galop'),
+(10, 10, 2, 11, 'Galop'),
+(11, 11, 1, 15, 'Galop'),
+(12, 12, 17, 5, 'Galop'),
+(13, 13, 18, 6, 'Galop'),
+(14, 14, 19, 19, 'Galop'),
+(15, 15, 15, 15, 'Galop'),
+(16, 16, 20, 20, 'Galop'),
+(17, 17, 4, 18, 'Galop'),
+(18, 18, 21, 3, 'Galop'),
+-- Autres duo
+(19, 7, 22, 1, 'Galop'),  -- Estrange + Hollie Doyle
+(20, 8, 8, 4, 'Galop'),   -- Quisisana + Marie Vélon
+(21, 9, 11, 4, 'Galop'),  -- Kalpana + Keane
+(22, 11, 38, 4, 'Galop'), -- Daryz + Carlos Lopez
+(23, 12, 13, 1, 'Galop'), -- Leffard + McMonagle
+(24, 13, 15, 1, 'Galop'), -- Cualificar + Kitamura
+(25, 16, 25, 8, 'Galop'), -- Alohi Alii + Mickaëlle Michel
+(26, 17, 37, 19, 'Galop'),-- Minnie Hauk + Damien Lane
+(27, 18, 35, 9, 'Galop'), -- Gezora + Crastus
+(28, 20, 19, 2, 'Galop'), -- Hello Youmzain + Foley
+(29, 21, 26, 19, 'Galop'),-- Juntos Ganamos + Thomas
+(30, 23, 27, 20, 'Galop'),-- Jelitobum + Journiac
+(31, 24, 28, 18, 'Galop'),-- Icare Allen + Roussel
+(32, 25, 29, 19, 'Galop'),-- Jippie du Cerisier + Molins
+(33, 26, 30, 17, 'Galop'),-- Raffles Face + Pacaut
+(34, 33, 32, 8, 'Galop'), -- Horizon Dore + Chevillard
+(35, 35, 33, 2, 'Galop'), -- Astre Royal + Tosaki
+(36, 36, 34, 11, 'Galop'),-- Quintessia + Moreira
+(37, 37, 36, 3, 'Galop'), -- Emerald Falcon + Sophie Martin
+(38, 38, 39, 1, 'Galop'), -- Tornado Lys + Gonzalez
+(39, 39, 21, 4, 'Galop'), -- Saphir d'Empire + Marquand
+(40, 40, 1, 13, 'Galop'), -- Vol de Minuit + Barzalona 
+(41, 4, 4, 1, 'Galop'),   -- Sosie (Autre monte) + Soumillon
+(42, 32, 2, 3, 'Galop'),  -- Ace Impact (Autre monte) + Guyon
+(43, 29, 17, 12, 'Galop'),-- Big Rock (Autre monte) + Demuro
+(44, 31, 7, 5, 'Galop'),  -- Blue Rose Cen (Autre monte) + Pasquier
+(45, 10, 1, 11, 'Galop'), -- Aventure (Autre monte) + Barzalona
+(46, 5, 11, 2, 'Galop'),  -- Los Angeles (Autre monte) + Keane
+(47, 19, 22, 15, 'Galop'),-- Il Est Français + Doyle
+(48, 1, 16, 6, 'Galop'),  -- Giavellotto + Murphy
+(49, 34, 20, 12, 'Galop'),-- Simca Mille + Lemaire
+(50, 30, 18, 11, 'Galop');-- Feed The Flame + Buick
+
+
+INSERT INTO Duo (duoid, chevalid, jockeyid, entraineurid, discipline) VALUES
+(51, 41, 62, 21, 'Trot'), -- Idao de Tillard + Clément Duvaldestin + Thierry Duvaldestin
+(52, 42, 41, 22, 'Trot'), -- Horsy Dream + Eric Raffin + Belloche
+(53, 43, 42, 23, 'Trot'), -- Hooker Berry + JMB + JMB
+(54, 44, 43, 24, 'Trot'), -- Hokkaido Jiel + Matthieu Abrivard + Dersoir
+(55, 45, 53, 25, 'Trot'), -- Go On Boy + Romain Derieux + Derieux
+(56, 46, 46, 26, 'Trot'), -- Hussard du Landret + Benjamin Rochard + Robin
+(57, 47, 45, 27, 'Trot'), -- Italiano Vero + David Thomain + Allaire
+(58, 48, 41, 27, 'Trot'), -- Izoard Vedaquais + Eric Raffin + Allaire
+(59, 49, 46, 29, 'Trot'), -- Gu d'Héripré + Rochard + Souloy
+(60, 50, 48, 26, 'Trot'), -- Emeraude de Bais + Franck Nivard + Robin
+(61, 51, 43, 31, 'Trot'), -- Vivid Wise As + M.Abrivard + Gocciadoro
+(62, 52, 75, 30, 'Trot'), -- San Moteur + Bjorn Goop + Goop
+(63, 53, 48, 29, 'Trot'), -- Ampia Mede SM + Nivard + Souloy
+(64, 54, 41, 32, 'Trot'), -- Hail Mary + Raffin + Redén
+(65, 55, 50, 32, 'Trot'), -- Don Fanucci Zet + Gabriele Gelormini + Redén
+(66, 56, 74, 31, 'Trot'), -- Vernissage Grif + Gocciadoro + Gocciadoro
+(67, 57, 46, 30, 'Trot'), -- Joviality + Rochard + Goop
+(68, 58, 50, 31, 'Trot'), -- Capital Mail + Gelormini + Gocciadoro
+(69, 59, 74, 31, 'Trot'), -- Banderas Bi + Gocciadoro
+(70, 60, 74, 31, 'Trot'), -- Bengurion Jet + Gocciadoro
+(71, 61, 42, 23, 'Trot'), -- Jushua Tree + JMB + JMB
+(72, 62, 46, 27, 'Trot'), -- Just A Gigolo + Rochard + Allaire
+(73, 63, 45, 27, 'Trot'), -- Koctel du Dain + Thomain + Allaire
+(74, 64, 46, 36, 'Trot'), -- Kana de Beylev + Rochard + C.Thomain
+(75, 65, 48, 28, 'Trot'), -- Krack Time Atout + Nivard + Guarato
+(76, 66, 48, 23, 'Trot'), -- Kyrielle + Nivard + JMB
+(77, 67, 42, 23, 'Trot'), -- Liza Josselyn + JMB + JMB
+(78, 68, 44, 27, 'Trot'), -- Luciano Menuet + Alexandre Abrivard + Allaire
+(79, 69, 41, 33, 'Trot'), -- Lovino Bello + Raffin + LC.Abrivard
+(80, 70, 61, 21, 'Trot'), -- Jack Tonic + Théo Duvaldestin + T.Duvaldestin
+(81, 71, 49, 38, 'Trot'), -- Etonnant + Anthony Barrier + Westerink
+(82, 72, 65, 39, 'Trot'), -- Délia du Pommereux + Pierre-Yves Verva + Roger
+(83, 73, 52, 29, 'Trot'), -- Diable de Vauvert + Tony LeBeller + Souloy
+(84, 74, 42, 23, 'Trot'), -- Elie de Beaufour + JMB + JMB
+(85, 75, 59, 34, 'Trot'), -- Fakir de Mahey + Mathieu Mottier + Mottier
+(86, 76, 42, 23, 'Trot'), -- Ganay de Banville + JMB + JMB
+(87, 77, 43, 24, 'Trot'), -- Gaspar de Brion + M.Abrivard + Dersoir
+(88, 78, 48, 22, 'Trot'), -- Happy Valley + Nivard + Belloche
+(89, 79, 44, 33, 'Trot'), -- Inmarosa + Alexandre Abrivard + LC.Abrivard
+(90, 80, 43, 23, 'Trot'), -- Ideal du Pommeau + M.Abrivard + JMB
+(91, 41, 61, 21, 'Trot'), -- Idao (Autre monte) + Théo Duvaldestin
+(92, 43, 48, 23, 'Trot'), -- Hooker (Autre monte) + Nivard
+(93, 51, 74, 31, 'Trot'), -- Vivid (Autre monte) + Gocciadoro
+(94, 61, 41, 23, 'Trot'), -- Jushua Tree (Autre monte) + Raffin
+(95, 62, 44, 27, 'Trot'), -- Just A Gigolo (Autre monte) + A.Abrivard
+(96, 45, 41, 25, 'Trot'), -- Go On Boy (Autre monte) + Raffin
+(97, 53, 43, 29, 'Trot'), -- Ampia (Autre monte) + M.Abrivard
+(98, 42, 46, 22, 'Trot'), -- Horsy Dream (Autre monte) + Rochard
+(99, 71, 41, 38, 'Trot'), -- Etonnant (Autre monte) + Raffin
+(100, 52, 41, 30, 'Trot'); -- San Moteur (Autre monte) + Raffin
