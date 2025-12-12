@@ -65,7 +65,7 @@ CREATE TABLE Parieur(
     nom varchar(20) NOT NULL,
     prenom varchar(20) NOT NULL,
     datenaiss date NOT NULL,
-    solde number(8) NOT NULL
+    solde number(10,2) NOT NULL
 );
 
 
@@ -119,5 +119,6 @@ CREATE TABLE Paris(
     CONSTRAINT fk_paris_participation FOREIGN KEY (participationid) REFERENCES Participation(participationid),
     CONSTRAINT fk_paris_parieur FOREIGN KEY (parieurid) REFERENCES Parieur(parieurid)
 );
+
 
 
