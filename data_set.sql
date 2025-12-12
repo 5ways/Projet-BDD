@@ -659,3 +659,36 @@ INSERT INTO Duo (duoid, chevalid, jockeyid, entraineurid, discipline) VALUES
 (98, 42, 46, 22, 'Trot'), -- Horsy Dream (Autre monte) + Rochard
 (99, 71, 41, 38, 'Trot'), -- Etonnant (Autre monte) + Raffin
 (100, 52, 41, 30, 'Trot'); -- San Moteur (Autre monte) + Raffin
+
+
+INSERT INTO Parieur (parieurid, nom, prenom, datenaiss, solde) VALUES
+(1, 'ECONOMIE', 'Béatrice', '1965-05-15', 0),
+(2, 'ACCETO', 'Raphaël', '1974-10-09', 0),
+(3, 'MACHOUILLANT', 'Alexis', '2005-02-18', 0),
+(4, 'CATORZE', 'Louis', '1683-09-05', 0),
+(5, 'DUBARAGE', 'Phillipe', '1960-06-24', 0),
+(6, 'LAMIE', 'Nora', '1971-11-04', 0),
+(7, 'LAMER', 'Kendrick', '1987-06-17', 0),
+(8, 'CARTIER', 'Jordan', '1996-09-13', 0),
+(9, 'OLIVIER', 'Gabriel', '2002-11-25', 0),
+(10, 'LAVAL', 'Camille', '2004-03-03', 0),
+(11, 'PETITE-BOITE', 'Franck', '1959-08-25', 0),
+(12, 'COPIE', 'Magalie', '1978-01-02', 0),
+(13, 'ALDI', 'Adrian', '0002-03-05', 0),
+(14, 'WEBER', 'Jacques', '1991-04-30', 0),
+(15, 'BERNARD', 'Delphine', '1964-12-23', 0),
+(16, 'PATRICA', 'Alex', '1985-09-24', 0),
+(17, 'OKLAHOMA', 'Tyler', '1991-03-06', 0),
+(18, 'HATSU', 'Miku', '2007-08-31', 0),
+(19, 'GOUTER', 'Marine', '2005-01-25', 0),
+(20, 'SIMONE', 'Agathe', '1998-07-15', 0),
+(21, 'ALLONGEOEIL', 'Pierre', '1979-10-10', 0),
+(22, 'BERNARD', 'Olivier', '1968-04-26', 0),
+(23, 'RAZOIRTROPTO', 'Erwan', '2005-05-18', 0),
+(24, 'CHOUETTE', 'Sandrine', '1958-12-12', 0),
+(25, 'DOS', 'Clara', '2000-09-13', 0),
+(26, 'BELPIEUVRE', 'Lana', '1985-06-21', 0),
+(27, 'SOUTH', 'Kanye', '1977-06-08', 0),
+(28, 'BIBU', 'Hélène', '1975-07-06', 0),
+(29, 'CACHETTE', 'Emel', '2005-10-24', 0),
+(30, 'TSIXSEVEN', 'Ider', '1967-06-07', 0);
