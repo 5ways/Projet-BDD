@@ -47,7 +47,7 @@ CREATE TABLE Organisateur(
 
 CREATE TABLE Course(
     courseid number(3) PRIMARY KEY,
-    nom varchar(50) NOT NULL,
+    nom varchar(60) NOT NULL,
     date_c date NOT NULL,
     discipline varchar(20) NOT NULL,
     sousdiscipline varchar(20) NOT NULL,
@@ -119,6 +119,3 @@ CREATE TABLE Paris(
     CONSTRAINT fk_paris_participation FOREIGN KEY (participationid) REFERENCES Participation(participationid),
     CONSTRAINT fk_paris_parieur FOREIGN KEY (parieurid) REFERENCES Parieur(parieurid)
 );
-
-
-
