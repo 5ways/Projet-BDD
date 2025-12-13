@@ -1,4 +1,4 @@
-    CREATE TABLE Jockey(
+CREATE TABLE Jockey(
     jockeyid number(2) PRIMARY KEY,
     nom varchar(20) NOT NULL,
     prenom varchar(20) NOT NULL,
@@ -83,7 +83,7 @@ CREATE TABLE Duo(
     jockeyid number(2),
     chevalid number(2),
     entraineurid number(2),
-    discipline varchar(20),
+    discipline varchar(20), 
     CONSTRAINT fk_duo_jockey FOREIGN KEY (jockeyid) REFERENCES Jockey(jockeyid),
     CONSTRAINT fk_duo_cheval FOREIGN KEY (chevalid) REFERENCES Cheval(chevalid),
     CONSTRAINT fk_duo_entraineur FOREIGN KEY (entraineurid) REFERENCES Entraineur(entraineurid),
