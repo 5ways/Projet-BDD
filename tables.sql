@@ -94,6 +94,7 @@ CREATE TABLE Duo(
 CREATE TABLE Inscription(
     participationid number(3),
     duoid number(3), 
+    frais_inscrip number(6) NOT NULL,
     statut varchar(20) NOT NULL,
     PRIMARY KEY (participationid, duoid),
     CONSTRAINT fk_inscrip_participation FOREIGN KEY (participationid) REFERENCES Participation(participationid),
@@ -119,3 +120,4 @@ CREATE TABLE Paris(
     CONSTRAINT fk_paris_participation FOREIGN KEY (participationid) REFERENCES Participation(participationid),
     CONSTRAINT fk_paris_parieur FOREIGN KEY (parieurid) REFERENCES Parieur(parieurid)
 );
+
