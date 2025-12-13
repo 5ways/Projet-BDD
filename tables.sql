@@ -5,7 +5,10 @@ CREATE TABLE Jockey(
     nationalite varchar(20),
     poids number(4,2),
     discipline varchar(20) NOT NULL,
-    gain number(8)
+    gain number(8),
+
+    CONSTRAINT ck_poids_jockey CHECK (poids>=0),
+    CONSTRAINT ck_gain_jockey CHECK (gain>=0)
 );
 
 CREATE TABLE Cheval(
@@ -13,10 +16,13 @@ CREATE TABLE Cheval(
     nom varchar(20) NOT NULL,
     datenaiss date NOT NULL,
     race varchar(20),
-    sexe varchar(10) NOT NULL,
+    sexe varchar(1) NOT NULL,
     poids number(5,2),
     discipline varchar(20) NOT NULL,
-    gain number(8)
+    gain number(8),
+
+    CONSTRAINT ck_poids_cheval CHECK (poids>=0),
+    CONSTRAINT ck_gain_cheval CHECK (gain>=0)
 );
 
 CREATE TABLE Entraineur(
@@ -24,7 +30,9 @@ CREATE TABLE Entraineur(
     nom varchar(20) NOT NULL,
     prenom varchar(20) NOT NULL,
     nationalite varchar(20),
-    gain number(8)
+    gain number(8),
+
+    CONSTRAINT ck_gain_entraineur CHECK (gain>=0)
 );
 
 CREATE TABLE Propietaire(
@@ -33,16 +41,19 @@ CREATE TABLE Propietaire(
     nom varchar(30),          
     prenom varchar(30),      
     nationalite varchar(20),   
-    gain number(8) DEFAULT 0, 
+    gain number(8), 
    
-    CONSTRAINT check_identite CHECK (ecurie IS NOT NULL OR nom IS NOT NULL)
+    CONSTRAINT check_identite CHECK (ecurie IS NOT NULL OR nom IS NOT NULL),
+    CONSTRAINT ck_gain_proprio CHECK (gain>=0)
 );
 
 CREATE TABLE Organisateur(
     organisateurid number(2) PRIMARY KEY,
     nom varchar(40) NOT NULL,
     discipline varchar(20)NOT NULL,
-    tresorerie number(8) NOT NULL
+    tresorerie number(8) NOT NULL,
+
+    CONSTRAINT ck_treso CHECK (tresorerie>=0)
 );
 
 CREATE TABLE Course(
@@ -56,7 +67,10 @@ CREATE TABLE Course(
     cashprize number(8) NOT NULL,
     lieu varchar(50) NOT NULL,
     organisateurid number(2),
-    CONSTRAINT fk_course_organisateur FOREIGN KEY (organisateurid) REFERENCES Organisateur(organisateurid)
+    
+    CONSTRAINT fk_course_organisateur FOREIGN KEY (organisateurid) REFERENCES Organisateur(organisateurid),
+    CONSTRAINT ck_distance CHECK (distance>=0),
+    CONSTRAINT ck_cashprize CHECK (cashprize>=0)
 );
 
 
@@ -65,7 +79,9 @@ CREATE TABLE Parieur(
     nom varchar(20) NOT NULL,
     prenom varchar(20) NOT NULL,
     datenaiss date NOT NULL,
-    solde number(10,2) NOT NULL
+    solde number(10,2) NOT NULL,
+
+    CONSTRAINT ck_solde CHECK (solde>=0)
 );
 
 
@@ -74,7 +90,9 @@ CREATE TABLE Participation(
     courseid number(2),
     resultat number(1),
     statut varchar(20) NOT NULL,
-    CONSTRAINT fk_part_course FOREIGN KEY (courseid) REFERENCES Course(courseid)
+    
+    CONSTRAINT fk_part_course FOREIGN KEY (courseid) REFERENCES Course(courseid),
+    CONSTRAINT ck_resultat CHECK (resultat>=0)
 );
 
 
@@ -83,7 +101,8 @@ CREATE TABLE Duo(
     jockeyid number(2),
     chevalid number(2),
     entraineurid number(2),
-    discipline varchar(20), 
+    discipline varchar(20),
+    
     CONSTRAINT fk_duo_jockey FOREIGN KEY (jockeyid) REFERENCES Jockey(jockeyid),
     CONSTRAINT fk_duo_cheval FOREIGN KEY (chevalid) REFERENCES Cheval(chevalid),
     CONSTRAINT fk_duo_entraineur FOREIGN KEY (entraineurid) REFERENCES Entraineur(entraineurid),
@@ -96,18 +115,22 @@ CREATE TABLE Inscription(
     duoid number(3), 
     frais_inscrip number(6) NOT NULL,
     statut varchar(20) NOT NULL,
+    
     PRIMARY KEY (participationid, duoid),
     CONSTRAINT fk_inscrip_participation FOREIGN KEY (participationid) REFERENCES Participation(participationid),
-    CONSTRAINT fk_inscrip_duo FOREIGN KEY (duoid) REFERENCES Duo(duoid)
+    CONSTRAINT fk_inscrip_duo FOREIGN KEY (duoid) REFERENCES Duo(duoid),
+    CONSTRAINT ck_frais CHECK (frais_inscrip>=0)
 );
 
 CREATE TABLE Appartient(
     proprietaireid number(3),
     chevalid number(2),
     part number(3),
+    
     PRIMARY KEY (proprietaireid, chevalid),
     CONSTRAINT fk_app_proprietaire FOREIGN KEY (proprietaireid) REFERENCES Propietaire(proprietaireid),
-    CONSTRAINT fk_app_cheval FOREIGN KEY (chevalid) REFERENCES Cheval(chevalid)
+    CONSTRAINT fk_app_cheval FOREIGN KEY (chevalid) REFERENCES Cheval(chevalid),
+    CONSTRAINT ck_part CHECK (part>=0)
 );
 
 CREATE TABLE Paris(
@@ -117,8 +140,8 @@ CREATE TABLE Paris(
     typeparis varchar(20) NOT NULL,
     montant number(4)NOT NULL,
     statut varchar(20) NOT NULL,
+    
     CONSTRAINT fk_paris_participation FOREIGN KEY (participationid) REFERENCES Participation(participationid),
-    CONSTRAINT fk_paris_parieur FOREIGN KEY (parieurid) REFERENCES Parieur(parieurid)
+    CONSTRAINT fk_paris_parieur FOREIGN KEY (parieurid) REFERENCES Parieur(parieurid),
+    CONSTRAINT ck_montant CHECK (montant>=2)
 );
-
-
