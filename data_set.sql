@@ -471,86 +471,46 @@ VALUES
 
 INSERT INTO Participation (participationid, courseid, resultat, statut)
 VALUES 
--- Course 1 (Arc de Triomphe)
-(1, 1, '1er', 'Terminé'), (2, 1, '2eme', 'Terminé'), (3, 1, '3eme', 'Terminé'), (4, 1, '4eme', 'Terminé'), (5, 1, '5eme', 'Terminé'),
--- Course 2 (Amérique)
-(6, 2, '1er', 'Terminé'), (7, 2, '2eme', 'Terminé'), (8, 2, '3eme', 'Terminé'), (9, 2, '4eme', 'Terminé'), (10, 2, '5eme', 'Terminé'),
--- Course 3
-(11, 3, '1er', 'Terminé'), (12, 3, '2eme', 'Terminé'), (13, 3, '3eme', 'Terminé'), (14, 3, '4eme', 'Terminé'), (15, 3, '5eme', 'Terminé'),
--- Course 4
-(16, 4, '1er', 'Terminé'), (17, 4, '2eme', 'Terminé'), (18, 4, '3eme', 'Terminé'), (19, 4, '4eme', 'Terminé'), (20, 4, '5eme', 'Terminé'),
--- Course 5
-(21, 5, '1er', 'Terminé'), (22, 5, '2eme', 'Terminé'), (23, 5, '3eme', 'Terminé'), (24, 5, '4eme', 'Terminé'), (25, 5, '5eme', 'Terminé'),
--- Course 6
-(26, 6, '1er', 'Terminé'), (27, 6, '2eme', 'Terminé'), (28, 6, '3eme', 'Terminé'), (29, 6, '4eme', 'Terminé'), (30, 6, '5eme', 'Terminé'),
--- Course 7
-(31, 7, '1er', 'Terminé'), (32, 7, '2eme', 'Terminé'), (33, 7, '3eme', 'Terminé'), (34, 7, '4eme', 'Terminé'), (35, 7, '5eme', 'Terminé'),
--- Course 8
-(36, 8, '1er', 'Terminé'), (37, 8, '2eme', 'Terminé'), (38, 8, '3eme', 'Terminé'), (39, 8, '4eme', 'Terminé'), (40, 8, '5eme', 'Terminé'),
--- Course 9
-(41, 9, '1er', 'Terminé'), (42, 9, '2eme', 'Terminé'), (43, 9, '3eme', 'Terminé'), (44, 9, '4eme', 'Terminé'), (45, 9, '5eme', 'Terminé'),
--- Course 10
-(46, 10, '1er', 'Terminé'), (47, 10, '2eme', 'Terminé'), (48, 10, '3eme', 'Terminé'), (49, 10, '4eme', 'Terminé'), (50, 10, '5eme', 'Terminé'),
--- Course 11
-(51, 11, '1er', 'Terminé'), (52, 11, '2eme', 'Terminé'), (53, 11, '3eme', 'Terminé'), (54, 11, '4eme', 'Terminé'), (55, 11, '5eme', 'Terminé'),
--- Course 12
-(56, 12, '1er', 'Terminé'), (57, 12, '2eme', 'Terminé'), (58, 12, '3eme', 'Terminé'), (59, 12, '4eme', 'Terminé'), (60, 12, '5eme', 'Terminé'),
--- Course 13
-(61, 13, '1er', 'Terminé'), (62, 13, '2eme', 'Terminé'), (63, 13, '3eme', 'Terminé'), (64, 13, '4eme', 'Terminé'), (65, 13, '5eme', 'Terminé'),
--- Course 14
-(66, 14, '1er', 'Terminé'), (67, 14, '2eme', 'Terminé'), (68, 14, '3eme', 'Terminé'), (69, 14, '4eme', 'Terminé'), (70, 14, '5eme', 'Terminé'),
--- Course 15
-(71, 15, '1er', 'Terminé'), (72, 15, '2eme', 'Terminé'), (73, 15, '3eme', 'Terminé'), (74, 15, '4eme', 'Terminé'), (75, 15, '5eme', 'Terminé'),
--- Course 16
-(76, 16, '1er', 'Terminé'), (77, 16, '2eme', 'Terminé'), (78, 16, '3eme', 'Terminé'), (79, 16, '4eme', 'Terminé'), (80, 16, '5eme', 'Terminé'),
--- Course 17
-(81, 17, '1er', 'Terminé'), (82, 17, '2eme', 'Terminé'), (83, 17, '3eme', 'Terminé'), (84, 17, '4eme', 'Terminé'), (85, 17, '5eme', 'Terminé'),
--- Course 18
-(86, 18, '1er', 'Terminé'), (87, 18, '2eme', 'Terminé'), (88, 18, '3eme', 'Terminé'), (89, 18, '4eme', 'Terminé'), (90, 18, '5eme', 'Terminé'),
--- Course 19
-(91, 19, '1er', 'Terminé'), (92, 19, '2eme', 'Terminé'), (93, 19, '3eme', 'Terminé'), (94, 19, '4eme', 'Terminé'), (95, 19, '5eme', 'Terminé'),
--- Course 20
-(96, 20, '1er', 'Terminé'), (97, 20, '2eme', 'Terminé'), (98, 20, '3eme', 'Terminé'), (99, 20, '4eme', 'Terminé'), (100, 20, '5eme', 'Terminé'),
--- Course 21
-(101, 21, '1er', 'Terminé'), (102, 21, '2eme', 'Terminé'), (103, 21, '3eme', 'Terminé'), (104, 21, '4eme', 'Terminé'), (105, 21, '5eme', 'Terminé'),
--- Course 22
-(106, 22, '1er', 'Terminé'), (107, 22, '2eme', 'Terminé'), (108, 22, '3eme', 'Terminé'), (109, 22, '4eme', 'Terminé'), (110, 22, '5eme', 'Terminé'),
--- Course 23
-(111, 23, '1er', 'Terminé'), (112, 23, '2eme', 'Terminé'), (113, 23, '3eme', 'Terminé'), (114, 23, '4eme', 'Terminé'), (115, 23, '5eme', 'Terminé'),
--- Course 24
-(116, 24, '1er', 'Terminé'), (117, 24, '2eme', 'Terminé'), (118, 24, '3eme', 'Terminé'), (119, 24, '4eme', 'Terminé'), (120, 24, '5eme', 'Terminé'),
--- Course 25
-(121, 25, '1er', 'Terminé'), (122, 25, '2eme', 'Terminé'), (123, 25, '3eme', 'Terminé'), (124, 25, '4eme', 'Terminé'), (125, 25, '5eme', 'Terminé'),
--- Course 26
-(126, 26, '1er', 'Terminé'), (127, 26, '2eme', 'Terminé'), (128, 26, '3eme', 'Terminé'), (129, 26, '4eme', 'Terminé'), (130, 26, '5eme', 'Terminé'),
--- Course 27
-(131, 27, '1er', 'Terminé'), (132, 27, '2eme', 'Terminé'), (133, 27, '3eme', 'Terminé'), (134, 27, '4eme', 'Terminé'), (135, 27, '5eme', 'Terminé'),
--- Course 28
-(136, 28, '1er', 'Terminé'), (137, 28, '2eme', 'Terminé'), (138, 28, '3eme', 'Terminé'), (139, 28, '4eme', 'Terminé'), (140, 28, '5eme', 'Terminé'),
--- Course 29
-(141, 29, '1er', 'Terminé'), (142, 29, '2eme', 'Terminé'), (143, 29, '3eme', 'Terminé'), (144, 29, '4eme', 'Terminé'), (145, 29, '5eme', 'Terminé'),
--- Course 30
-(146, 30, '1er', 'Terminé'), (147, 30, '2eme', 'Terminé'), (148, 30, '3eme', 'Terminé'), (149, 30, '4eme', 'Terminé'), (150, 30, '5eme', 'Terminé'),
--- Course 31
-(151, 31, '1er', 'Terminé'), (152, 31, '2eme', 'Terminé'), (153, 31, '3eme', 'Terminé'), (154, 31, '4eme', 'Terminé'), (155, 31, '5eme', 'Terminé'),
--- Course 32
-(156, 32, '1er', 'Terminé'), (157, 32, '2eme', 'Terminé'), (158, 32, '3eme', 'Terminé'), (159, 32, '4eme', 'Terminé'), (160, 32, '5eme', 'Terminé'),
--- Course 33
-(161, 33, '1er', 'Terminé'), (162, 33, '2eme', 'Terminé'), (163, 33, '3eme', 'Terminé'), (164, 33, '4eme', 'Terminé'), (165, 33, '5eme', 'Terminé'),
--- Course 34
-(166, 34, '1er', 'Terminé'), (167, 34, '2eme', 'Terminé'), (168, 34, '3eme', 'Terminé'), (169, 34, '4eme', 'Terminé'), (170, 34, '5eme', 'Terminé'),
--- Course 35
-(171, 35, '1er', 'Terminé'), (172, 35, '2eme', 'Terminé'), (173, 35, '3eme', 'Terminé'), (174, 35, '4eme', 'Terminé'), (175, 35, '5eme', 'Terminé'),
--- Course 36
-(176, 36, '1er', 'Terminé'), (177, 36, '2eme', 'Terminé'), (178, 36, '3eme', 'Terminé'), (179, 36, '4eme', 'Terminé'), (180, 36, '5eme', 'Terminé'),
--- Course 37
-(181, 37, '1er', 'Terminé'), (182, 37, '2eme', 'Terminé'), (183, 37, '3eme', 'Terminé'), (184, 37, '4eme', 'Terminé'), (185, 37, '5eme', 'Terminé'),
--- Course 38
-(186, 38, '1er', 'Terminé'), (187, 38, '2eme', 'Terminé'), (188, 38, '3eme', 'Terminé'), (189, 38, '4eme', 'Terminé'), (190, 38, '5eme', 'Terminé'),
--- Course 39
-(191, 39, '1er', 'Terminé'), (192, 39, '2eme', 'Terminé'), (193, 39, '3eme', 'Terminé'), (194, 39, '4eme', 'Terminé'), (195, 39, '5eme', 'Terminé'),
--- Course 40
-(196, 40, '1er', 'Terminé'), (197, 40, '2eme', 'Terminé'), (198, 40, '3eme', 'Terminé'), (199, 40, '4eme', 'Terminé'), (200, 40, '5eme', 'Terminé');
+(1, 1, 1, 'Terminé'), (2, 1, 2, 'Terminé'), (3, 1, 3, 'Terminé'), (4, 1, 4, 'Terminé'), (5, 1, 5, 'Terminé'),
+(6, 2, 1, 'Terminé'), (7, 2, 2, 'Terminé'), (8, 2, 3, 'Terminé'), (9, 2, 4, 'Terminé'), (10, 2, 5, 'Terminé'),
+(11, 3, 1, 'Terminé'), (12, 3, 2, 'Terminé'), (13, 3, 3, 'Terminé'), (14, 3, 4, 'Terminé'), (15, 3, 5, 'Terminé'),
+(16, 4, 1, 'Terminé'), (17, 4, 2, 'Terminé'), (18, 4, 3, 'Terminé'), (19, 4, 4, 'Terminé'), (20, 4, 5, 'Terminé'),
+(21, 5, 1, 'Terminé'), (22, 5, 2, 'Terminé'), (23, 5, 3, 'Terminé'), (24, 5, 4, 'Terminé'), (25, 5, 5, 'Terminé'),
+(26, 6, 1, 'Terminé'), (27, 6, 2, 'Terminé'), (28, 6, 3, 'Terminé'), (29, 6, 4, 'Terminé'), (30, 6, 5, 'Terminé'),
+(31, 7, 1, 'Terminé'), (32, 7, 2, 'Terminé'), (33, 7, 3, 'Terminé'), (34, 7, 4, 'Terminé'), (35, 7, 5, 'Terminé'),
+(36, 8, 1, 'Terminé'), (37, 8, 2, 'Terminé'), (38, 8, 3, 'Terminé'), (39, 8, 4, 'Terminé'), (40, 8, 5, 'Terminé'),
+(41, 9, 1, 'Terminé'), (42, 9, 2, 'Terminé'), (43, 9, 3, 'Terminé'), (44, 9, 4, 'Terminé'), (45, 9, 5, 'Terminé'),
+(46, 10, 1, 'Terminé'), (47, 10, 2, 'Terminé'), (48, 10, 3, 'Terminé'), (49, 10, 4, 'Terminé'), (50, 10, 5, 'Terminé'),
+(51, 11, 1, 'Terminé'), (52, 11, 2, 'Terminé'), (53, 11, 3, 'Terminé'), (54, 11, 4, 'Terminé'), (55, 11, 5, 'Terminé'),
+(56, 12, 1, 'Terminé'), (57, 12, 2, 'Terminé'), (58, 12, 3, 'Terminé'), (59, 12, 4, 'Terminé'), (60, 12, 5, 'Terminé'),
+(61, 13, 1, 'Terminé'), (62, 13, 2, 'Terminé'), (63, 13, 3, 'Terminé'), (64, 13, 4, 'Terminé'), (65, 13, 5, 'Terminé'),
+(66, 14, 1, 'Terminé'), (67, 14, 2, 'Terminé'), (68, 14, 3, 'Terminé'), (69, 14, 4, 'Terminé'), (70, 14, 5, 'Terminé'),
+(71, 15, 1, 'Terminé'), (72, 15, 2, 'Terminé'), (73, 15, 3, 'Terminé'), (74, 15, 4, 'Terminé'), (75, 15, 5, 'Terminé'),
+(76, 16, 1, 'Terminé'), (77, 16, 2, 'Terminé'), (78, 16, 3, 'Terminé'), (79, 16, 4, 'Terminé'), (80, 16, 5, 'Terminé'),
+(81, 17, 1, 'Terminé'), (82, 17, 2, 'Terminé'), (83, 17, 3, 'Terminé'), (84, 17, 4, 'Terminé'), (85, 17, 5, 'Terminé'),
+(86, 18, 1, 'Terminé'), (87, 18, 2, 'Terminé'), (88, 18, 3, 'Terminé'), (89, 18, 4, 'Terminé'), (90, 18, 5, 'Terminé'),
+(91, 19, 1, 'Terminé'), (92, 19, 2, 'Terminé'), (93, 19, 3, 'Terminé'), (94, 19, 4, 'Terminé'), (95, 19, 5, 'Terminé'),
+(96, 20, 1, 'Terminé'), (97, 20, 2, 'Terminé'), (98, 20, 3, 'Terminé'), (99, 20, 4, 'Terminé'), (100, 20, 5, 'Terminé'),
+(101, 21, 1, 'Terminé'), (102, 21, 2, 'Terminé'), (103, 21, 3, 'Terminé'), (104, 21, 4, 'Terminé'), (105, 21, 5, 'Terminé'),
+(106, 22, 1, 'Terminé'), (107, 22, 2, 'Terminé'), (108, 22, 3, 'Terminé'), (109, 22, 4, 'Terminé'), (110, 22, 5, 'Terminé'),
+(111, 23, 1, 'Terminé'), (112, 23, 2, 'Terminé'), (113, 23, 3, 'Terminé'), (114, 23, 4, 'Terminé'), (115, 23, 5, 'Terminé'),
+(116, 24, 1, 'Terminé'), (117, 24, 2, 'Terminé'), (118, 24, 3, 'Terminé'), (119, 24, 4, 'Terminé'), (120, 24, 5, 'Terminé'),
+(121, 25, 1, 'Terminé'), (122, 25, 2, 'Terminé'), (123, 25, 3, 'Terminé'), (124, 25, 4, 'Terminé'), (125, 25, 5, 'Terminé'),
+(126, 26, 1, 'Terminé'), (127, 26, 2, 'Terminé'), (128, 26, 3, 'Terminé'), (129, 26, 4, 'Terminé'), (130, 26, 5, 'Terminé'),
+(131, 27, 1, 'Terminé'), (132, 27, 2, 'Terminé'), (133, 27, 3, 'Terminé'), (134, 27, 4, 'Terminé'), (135, 27, 5, 'Terminé'),
+(136, 28, 1, 'Terminé'), (137, 28, 2, 'Terminé'), (138, 28, 3, 'Terminé'), (139, 28, 4, 'Terminé'), (140, 28, 5, 'Terminé'),
+(141, 29, 1, 'Terminé'), (142, 29, 2, 'Terminé'), (143, 29, 3, 'Terminé'), (144, 29, 4, 'Terminé'), (145, 29, 5, 'Terminé'),
+(146, 30, 1, 'Terminé'), (147, 30, 2, 'Terminé'), (148, 30, 3, 'Terminé'), (149, 30, 4, 'Terminé'), (150, 30, 5, 'Terminé'),
+(151, 31, 1, 'Terminé'), (152, 31, 2, 'Terminé'), (153, 31, 3, 'Terminé'), (154, 31, 4, 'Terminé'), (155, 31, 5, 'Terminé'),
+(156, 32, 1, 'Terminé'), (157, 32, 2, 'Terminé'), (158, 32, 3, 'Terminé'), (159, 32, 4, 'Terminé'), (160, 32, 5, 'Terminé'),
+(161, 33, 1, 'Terminé'), (162, 33, 2, 'Terminé'), (163, 33, 3, 'Terminé'), (164, 33, 4, 'Terminé'), (165, 33, 5, 'Terminé'),
+(166, 34, 1, 'Terminé'), (167, 34, 2, 'Terminé'), (168, 34, 3, 'Terminé'), (169, 34, 4, 'Terminé'), (170, 34, 5, 'Terminé'),
+(171, 35, 1, 'Terminé'), (172, 35, 2, 'Terminé'), (173, 35, 3, 'Terminé'), (174, 35, 4, 'Terminé'), (175, 35, 5, 'Terminé'),
+(176, 36, 1, 'Terminé'), (177, 36, 2, 'Terminé'), (178, 36, 3, 'Terminé'), (179, 36, 4, 'Terminé'), (180, 36, 5, 'Terminé'),
+(181, 37, 1, 'Terminé'), (182, 37, 2, 'Terminé'), (183, 37, 3, 'Terminé'), (184, 37, 4, 'Terminé'), (185, 37, 5, 'Terminé'),
+(186, 38, 1, 'Terminé'), (187, 38, 2, 'Terminé'), (188, 38, 3, 'Terminé'), (189, 38, 4, 'Terminé'), (190, 38, 5, 'Terminé'),
+(191, 39, 1, 'Terminé'), (192, 39, 2, 'Terminé'), (193, 39, 3, 'Terminé'), (194, 39, 4, 'Terminé'), (195, 39, 5, 'Terminé'),
+(196, 40, 1, 'Terminé'), (197, 40, 2, 'Terminé'), (198, 40, 3, 'Terminé'), (199, 40, 4, 'Terminé'), (200, 40, 5, 'Terminé');
 
 
 INSERT INTO Duo (duoid, chevalid, jockeyid, entraineurid, discipline) VALUES
@@ -662,17 +622,18 @@ INSERT INTO Duo (duoid, chevalid, jockeyid, entraineurid, discipline) VALUES
 
 
 INSERT INTO Inscription (participationid, duoid, statut, frais_inscrip) VALUES
+-- COURSE 1 : GALOP
 (1, 15, 'Validé', 10000), 
 (2, 1,  'Validé', 10000),
 (3, 2,  'Validé', 10000),
 (4, 3,  'Validé', 10000),
 (5, 4,  'Validé', 10000),
--- COURSE 2 : GALOP (Reste des Duos < 50)
-(6, 6,  'Validé', 2500),
-(7, 7,  'Validé', 2500),
-(8, 8,  'Validé', 2500),
-(9, 9,  'Validé', 2500),
-(10, 10, 'Validé', 2500),
+-- COURSE 2 : TROT
+(6, 51, 'Validé', 10000),
+(7, 52, 'Validé', 10000),
+(8, 53, 'Validé', 10000),
+(9, 54, 'Validé', 10000),
+(10, 55, 'Validé', 10000),
 -- COURSE 3 : GALOP
 (11, 11, 'Validé', 800),
 (12, 12, 'Validé', 800),
@@ -709,18 +670,18 @@ INSERT INTO Inscription (participationid, duoid, statut, frais_inscrip) VALUES
 (38, 39, 'Validé', 4300),
 (39, 40, 'Validé', 4300),
 (40, 41, 'Validé', 4300),
--- COURSE 9 : TROT (Duos 51-60 obligatoires)
-(41, 51, 'Validé', 7800),
-(42, 52, 'Validé', 7800),
-(43, 53, 'Validé', 7800),
-(44, 54, 'Validé', 7800),
-(45, 55, 'Validé', 7800),
--- COURSE 10 : TROT
-(46, 56, 'Validé', 1500),
-(47, 57, 'Validé', 1500),
-(48, 58, 'Validé', 1500),
-(49, 59, 'Validé', 1500),
-(50, 60, 'Validé', 1500);
+-- COURSE 13 : TROT 
+(61, 51, 'Validé', 7800),
+(62, 52, 'Validé', 7800),
+(63, 53, 'Validé', 7800),
+(64, 54, 'Validé', 7800),
+(65, 55, 'Validé', 7800),
+-- COURSE 14 : TROT
+(66, 56, 'Validé', 1500),
+(67, 57, 'Validé', 1500),
+(68, 58, 'Validé', 1500),
+(69, 59, 'Validé', 1500),
+(70, 60, 'Validé', 1500);
 
 
 INSERT INTO Parieur (parieurid, nom, prenom, datenaiss, solde) VALUES
@@ -830,4 +791,5 @@ VALUES(1, 1, 46, 'Simple Gagnant', 47, 'Gagné'),
 (71, 30, 44, 'Simple Placé', 10, 'Perdu'),
 (72, 30, 20, 'Simple Placé', 36, 'Perdu'),
 (73, 30, 29, 'Simple Gagnant', 39, 'Perdu');
+
 
