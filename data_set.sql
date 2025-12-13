@@ -661,6 +661,68 @@ INSERT INTO Duo (duoid, chevalid, jockeyid, entraineurid, discipline) VALUES
 (100, 52, 41, 30, 'Trot'); -- San Moteur (Autre monte) + Raffin
 
 
+INSERT INTO Inscription (participationid, duoid, statut, frais_inscrip) VALUES
+(1, 15, 'Validé', 10000), 
+(2, 1,  'Validé', 10000),
+(3, 2,  'Validé', 10000),
+(4, 3,  'Validé', 10000),
+(5, 4,  'Validé', 10000),
+-- COURSE 2 : GALOP (Reste des Duos < 50)
+(6, 6,  'Validé', 2500),
+(7, 7,  'Validé', 2500),
+(8, 8,  'Validé', 2500),
+(9, 9,  'Validé', 2500),
+(10, 10, 'Validé', 2500),
+-- COURSE 3 : GALOP
+(11, 11, 'Validé', 800),
+(12, 12, 'Validé', 800),
+(13, 13, 'Validé', 800),
+(14, 14, 'Validé', 800),
+(15, 16, 'Validé', 800), 
+-- COURSE 4 : GALOP
+(16, 17, 'Validé', 5600),
+(17, 18, 'Validé', 5600),
+(18, 19, 'Validé', 5600),
+(19, 20, 'Validé', 5600),
+(20, 21, 'Validé', 5600),
+-- COURSE 5 : GALOP
+(21, 22, 'Validé', 1200),
+(22, 23, 'Validé', 1200),
+(23, 24, 'Validé', 1200),
+(24, 25, 'Validé', 1200),
+(25, 26, 'Validé', 1200),
+-- COURSE 6 : GALOP
+(26, 27, 'Validé', 9000),
+(27, 28, 'Validé', 9000),
+(28, 29, 'Validé', 9000),
+(29, 30, 'Validé', 9000),
+(30, 31, 'Validé', 9000),
+-- COURSE 7 : GALOP
+(31, 32, 'Validé', 650),
+(32, 33, 'Validé', 650),
+(33, 34, 'Validé', 650),
+(34, 35, 'Validé', 650),
+(35, 36, 'Validé', 650),
+-- COURSE 8 : GALOP
+(36, 37, 'Validé', 4300),
+(37, 38, 'Validé', 4300),
+(38, 39, 'Validé', 4300),
+(39, 40, 'Validé', 4300),
+(40, 41, 'Validé', 4300),
+-- COURSE 9 : TROT (Duos 51-60 obligatoires)
+(41, 51, 'Validé', 7800),
+(42, 52, 'Validé', 7800),
+(43, 53, 'Validé', 7800),
+(44, 54, 'Validé', 7800),
+(45, 55, 'Validé', 7800),
+-- COURSE 10 : TROT
+(46, 56, 'Validé', 1500),
+(47, 57, 'Validé', 1500),
+(48, 58, 'Validé', 1500),
+(49, 59, 'Validé', 1500),
+(50, 60, 'Validé', 1500);
+
+
 INSERT INTO Parieur (parieurid, nom, prenom, datenaiss, solde) VALUES
 (1, 'ECONOMIE', 'Béatrice', '1965-05-15', 0),
 (2, 'ACCETO', 'Raphaël', '1974-10-09', 0),
@@ -768,3 +830,4 @@ VALUES(1, 1, 46, 'Simple Gagnant', 47, 'Gagné'),
 (71, 30, 44, 'Simple Placé', 10, 'Perdu'),
 (72, 30, 20, 'Simple Placé', 36, 'Perdu'),
 (73, 30, 29, 'Simple Gagnant', 39, 'Perdu');
+
