@@ -72,7 +72,7 @@ CREATE TABLE Parieur(
 CREATE TABLE Participation(
     participationid number(3) PRIMARY KEY,
     courseid number(2),
-    resultat varchar(20), /*ou number 1 */
+    resultat number(1),
     statut varchar(20) NOT NULL,
     CONSTRAINT fk_part_course FOREIGN KEY (courseid) REFERENCES Course(courseid)
 );
@@ -120,4 +120,5 @@ CREATE TABLE Paris(
     CONSTRAINT fk_paris_participation FOREIGN KEY (participationid) REFERENCES Participation(participationid),
     CONSTRAINT fk_paris_parieur FOREIGN KEY (parieurid) REFERENCES Parieur(parieurid)
 );
+
 
