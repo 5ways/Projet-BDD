@@ -130,7 +130,7 @@ CREATE TABLE Appartient(
     PRIMARY KEY (proprietaireid, chevalid),
     CONSTRAINT fk_app_proprietaire FOREIGN KEY (proprietaireid) REFERENCES Propietaire(proprietaireid),
     CONSTRAINT fk_app_cheval FOREIGN KEY (chevalid) REFERENCES Cheval(chevalid),
-    CONSTRAINT ck_part CHECK (part>=0)
+    CONSTRAINT ck_part CHECK (part>=0 AND part<=100)
 );
 
 CREATE TABLE Paris(
@@ -143,5 +143,6 @@ CREATE TABLE Paris(
     
     CONSTRAINT fk_paris_participation FOREIGN KEY (participationid) REFERENCES Participation(participationid),
     CONSTRAINT fk_paris_parieur FOREIGN KEY (parieurid) REFERENCES Parieur(parieurid),
-    CONSTRAINT ck_montant CHECK (montant>=2)
+    CONSTRAINT ck_montant CHECK (montant>=2 AND montant<=1000),
+    CONSTRAINT ck_type_paris CHECK (typeparis IN ('Simple Gagnant', 'Simple Placé')) 
 );
