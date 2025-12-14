@@ -47,6 +47,17 @@ i.duoid in ( -- verify if the duo is actually in the list of 2025 runners
     p2.courseid = co.courseid AND
     co.date >= TO_DATE('2025-01-01')
 )
-GROUP BY f.jockeyid, f.chevalid
+GROUP BY d.jockeyid, d.chevalid
 ORDER BY number_of_wins DESC
 LIMIT 5;
+
+-- Meilleur Race : Top 3 des races de chevaux avec le plus de 1ères places
+SELECT c.race, count(p.résultat) as number_of_wins
+FROM Cheval c, Duo d, Inscription i, Participation p
+WHERE c.chevalid = d.chevalid AND
+d.duoid = i.duoid AND
+i.participationid = p.participationid AND
+p.résultat = '1'
+GROUP BY c.race
+ORDER BY number_of_wins DESC
+LIMIT 3;
