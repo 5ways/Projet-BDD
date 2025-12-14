@@ -62,8 +62,7 @@ co.nom like '%Grand Prix%' AND
 p.résultat = '1'
 GROUP BY j.jockeyid
 HAVING number_of_wins >= 3
-ORDER BY number_of_wins
-LIMIT 3;
+ORDER BY number_of_wins;
 
 -- Meilleur Race : Top 3 des races de chevaux avec le plus de 1ères places
 SELECT c.race, count(p.résultat) as number_of_wins
