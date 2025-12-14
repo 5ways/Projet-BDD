@@ -137,6 +137,7 @@ CREATE TABLE Paris(
     parisid number(3) PRIMARY KEY,
     parieurid number(2),
     participationid number(3),
+    -- placement number(2), ???
     typeparis varchar(20) NOT NULL,
     montant number(4)NOT NULL,
     statut varchar(20) NOT NULL,
@@ -145,4 +146,5 @@ CREATE TABLE Paris(
     CONSTRAINT fk_paris_parieur FOREIGN KEY (parieurid) REFERENCES Parieur(parieurid),
     CONSTRAINT ck_montant CHECK (montant>=2 AND montant<=1000),
     CONSTRAINT ck_type_paris CHECK (typeparis IN ('Simple Gagnant', 'Simple Placé')) 
+    -- CONSTRAINT ck_placement CHECK (placement >0 AND placement <= 20) ???
 );
