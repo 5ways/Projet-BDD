@@ -51,6 +51,20 @@ GROUP BY d.jockeyid, d.chevalid
 ORDER BY number_of_wins DESC
 LIMIT 5;
 
+-- Jockey de légende, ceux ayant gagné au moins 3 Grand Prix dans leur carrière.
+SELECT j.jockeyid, count(p.résultat) as number_of_wins
+FROM Jockey j, Duo d, Inscription i, Participation p, Course co
+WHERE j.jockeyid = d.jockeyid AND
+d.duoid = i.duoid AND
+i.participationid = p.participationid AND
+p.courseid = co.courseid AND
+co.nom like '%Grand Prix%' AND
+p.résultat = '1'
+GROUP BY j.jockeyid
+HAVING number_of_wins >= 3
+ORDER BY number_of_wins
+LIMIT 3;
+
 -- Meilleur Race : Top 3 des races de chevaux avec le plus de 1ères places
 SELECT c.race, count(p.résultat) as number_of_wins
 FROM Cheval c, Duo d, Inscription i, Participation p
