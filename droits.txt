@@ -41,7 +41,7 @@ GRANT SELECT ON benchsqL.Inscription    TO entraineur_jockey;
 
 
 
--- proprietaire cheva
+-- proprietaire cheval
 CREATE USER proprietaire_cheval IDENTIFIED BY motdepasse;
 GRANT CREATE SESSION TO proprietaire_cheval;
 GRANT SELECT ON benchsqL.Entraineur    TO proprietaire_cheval;
@@ -53,4 +53,5 @@ GRANT SELECT ON benchsqL.Participation  TO proprietaire_cheval;
 GRANT SELECT ON benchsqL.Duo            TO proprietaire_cheval;
 GRANT SELECT ON benchsqL.Inscription    TO proprietaire_cheval;
 GRANT SELECT ON benchsqL.Appartient     TO proprietaire_cheval;
+
 
