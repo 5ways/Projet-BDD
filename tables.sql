@@ -25,7 +25,7 @@ CREATE TABLE Cheval(
     CONSTRAINT ck_poids_cheval CHECK (poids>=0),
     CONSTRAINT ck_gain_cheval CHECK (gain>=0),
     CONSTRAINT ck_discipline_cheval CHECK (discipline IN ('Galop', 'Trot')),
-    CONSTRAINT ck_sexe CHECK (sexe IN ('F', 'M')
+    CONSTRAINT ck_sexe CHECK (sexe IN ('F', 'M'))
 );
 
 CREATE TABLE Entraineur(
