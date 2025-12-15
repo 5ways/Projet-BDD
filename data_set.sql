@@ -621,67 +621,67 @@ INSERT INTO Duo (duoid, chevalid, jockeyid, entraineurid, discipline) VALUES
 (100, 52, 41, 30, 'Trot'); -- San Moteur (Autre monte) + Raffin
 
 
-INSERT INTO Inscription (participationid, duoid, statut, frais_inscrip) VALUES
--- COURSE 1 : GALOP
-(1, 15, 'Validé', 10000), 
-(2, 1,  'Validé', 10000),
-(3, 2,  'Validé', 10000),
-(4, 3,  'Validé', 10000),
-(5, 4,  'Validé', 10000),
--- COURSE 2 : TROT
-(6, 51, 'Validé', 10000),
-(7, 52, 'Validé', 10000),
-(8, 53, 'Validé', 10000),
-(9, 54, 'Validé', 10000),
-(10, 55, 'Validé', 10000),
+INSERT INTO Inscription (participationid, duoid, statut, frais_inscrip, cote) VALUES
+-- COURSE 1 : GALOP 
+(1, 15, 'Validé', 10000, 2.0),
+(2, 1, 'Validé', 10000, 6.5),
+(3, 2, 'Validé', 10000, 11.4),
+(4, 3, 'Validé', 10000, 5.0),
+(5, 4, 'Validé', 10000, 4.3),
+-- COURSE 2 : TROT 
+(6, 51, 'Validé', 10000, 4.9),
+(7, 52, 'Validé', 10000, 33.9),
+(8, 53, 'Validé', 10000, 10.0),
+(9, 54, 'Validé', 10000, 71.0),
+(10, 55, 'Validé', 10000, 4.1),
 -- COURSE 3 : GALOP
-(11, 11, 'Validé', 800),
-(12, 12, 'Validé', 800),
-(13, 13, 'Validé', 800),
-(14, 14, 'Validé', 800),
-(15, 16, 'Validé', 800), 
+(11, 11, 'Validé', 800, 6.1),
+(12, 12, 'Validé', 800, 5.7),
+(13, 13, 'Validé', 800, 7.7),
+(14, 14, 'Validé', 800, 24.2),
+(15, 16, 'Validé', 800, 10.6),
 -- COURSE 4 : GALOP
-(16, 17, 'Validé', 5600),
-(17, 18, 'Validé', 5600),
-(18, 19, 'Validé', 5600),
-(19, 20, 'Validé', 5600),
-(20, 21, 'Validé', 5600),
--- COURSE 5 : GALOP
-(21, 22, 'Validé', 1200),
-(22, 23, 'Validé', 1200),
-(23, 24, 'Validé', 1200),
-(24, 25, 'Validé', 1200),
-(25, 26, 'Validé', 1200),
+(16, 17, 'Validé', 5600, 6.3),
+(17, 18, 'Validé', 5600, 14.7),
+(18, 19, 'Validé', 5600, 10.1),
+(19, 20, 'Validé', 5600, 10.8),
+(20, 21, 'Validé', 5600, 10.4),
+-- COURSE 5 : GALOP 
+(21, 22, 'Validé', 1200, 2.1),
+(22, 23, 'Validé', 1200, 42.5),
+(23, 24, 'Validé', 1200, 37.1),
+(24, 25, 'Validé', 1200, 41.4),
+(25, 26, 'Validé', 1200, 8.0),
 -- COURSE 6 : GALOP
-(26, 27, 'Validé', 9000),
-(27, 28, 'Validé', 9000),
-(28, 29, 'Validé', 9000),
-(29, 30, 'Validé', 9000),
-(30, 31, 'Validé', 9000),
+(26, 27, 'Validé', 9000, 3.1),
+(27, 28, 'Validé', 9000, 14.3),
+(28, 29, 'Validé', 9000, 10.7),
+(29, 30, 'Validé', 9000, 84.3),
+(30, 31, 'Validé', 9000, 51.0),
 -- COURSE 7 : GALOP
-(31, 32, 'Validé', 650),
-(32, 33, 'Validé', 650),
-(33, 34, 'Validé', 650),
-(34, 35, 'Validé', 650),
-(35, 36, 'Validé', 650),
+(31, 32, 'Validé', 650, 5.8),
+(32, 33, 'Validé', 650, 11.5),
+(33, 34, 'Validé', 650, 12.5),
+(34, 35, 'Validé', 650, 18.0),
+(35, 36, 'Validé', 650, 6.9),
 -- COURSE 8 : GALOP
-(36, 37, 'Validé', 4300),
-(37, 38, 'Validé', 4300),
-(38, 39, 'Validé', 4300),
-(39, 40, 'Validé', 4300),
-(40, 41, 'Validé', 4300),
+(36, 37, 'Validé', 4300, 7.6),
+(37, 38, 'Validé', 4300, 7.5),
+(38, 39, 'Validé', 4300, 8.4),
+(39, 40, 'Validé', 4300, 9.0),
+(40, 41, 'Validé', 4300, 6.7),
 -- COURSE 13 : TROT 
-(61, 51, 'Validé', 7800),
-(62, 52, 'Validé', 7800),
-(63, 53, 'Validé', 7800),
-(64, 54, 'Validé', 7800),
-(65, 55, 'Validé', 7800),
--- COURSE 14 : TROT
-(66, 56, 'Validé', 1500),
-(67, 57, 'Validé', 1500),
-(68, 58, 'Validé', 1500),
-(69, 59, 'Validé', 1500),
-(70, 60, 'Validé', 1500);
+(61, 51, 'Validé', 7800, 3.4),
+(62, 52, 'Validé', 7800, 13.9),
+(63, 53, 'Validé', 7800, 6.4),
+(64, 54, 'Validé', 7800, 9.6),
+(65, 55, 'Validé', 7800, 19.5),
+-- COURSE 14 : TROT 
+(66, 56, 'Validé', 1500, 53.2),
+(67, 57, 'Validé', 1500, 8.6),
+(68, 58, 'Validé', 1500, 51.3), 
+(69, 59, 'Validé', 1500, 9.8),
+(70, 60, 'Validé', 1500, 13.5);
 
 
 INSERT INTO Parieur (parieurid, nom, prenom, datenaiss, solde) VALUES
@@ -791,6 +791,7 @@ VALUES(1, 1, 46, 'Simple Gagnant', 47, 'Gagné'),
 (71, 30, 44, 'Simple Placé', 10, 'Perdu'),
 (72, 30, 20, 'Simple Placé', 36, 'Perdu'),
 (73, 30, 29, 'Simple Gagnant', 39, 'Perdu');
+
 
 
 
