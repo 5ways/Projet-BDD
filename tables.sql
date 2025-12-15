@@ -24,7 +24,8 @@ CREATE TABLE Cheval(
 
     CONSTRAINT ck_poids_cheval CHECK (poids>=0),
     CONSTRAINT ck_gain_cheval CHECK (gain>=0),
-    CONSTRAINT ck_discipline_cheval CHECK (discipline IN ('Galop', 'Trot')) 
+    CONSTRAINT ck_discipline_cheval CHECK (discipline IN ('Galop', 'Trot')),
+    CONSTRAINT ck_sexe CHECK (sexe IN ('F', 'M')
 );
 
 CREATE TABLE Entraineur(
@@ -98,7 +99,8 @@ CREATE TABLE Participation(
     statut varchar(20) NOT NULL,
     
     CONSTRAINT fk_part_course FOREIGN KEY (courseid) REFERENCES Course(courseid),
-    CONSTRAINT ck_resultat CHECK (resultat>=0)
+    CONSTRAINT ck_resultat CHECK (resultat>=0),
+    CONSTRAINT ck_statut_participation CHECK (statut IN ('En cours', 'Terminé', 'Annulé'))
 );
 
 
@@ -112,7 +114,8 @@ CREATE TABLE Duo(
     CONSTRAINT fk_duo_jockey FOREIGN KEY (jockeyid) REFERENCES Jockey(jockeyid),
     CONSTRAINT fk_duo_cheval FOREIGN KEY (chevalid) REFERENCES Cheval(chevalid),
     CONSTRAINT fk_duo_entraineur FOREIGN KEY (entraineurid) REFERENCES Entraineur(entraineurid),
-    CONSTRAINT unq_team UNIQUE (chevalid, jockeyid, entraineurid)
+    CONSTRAINT unq_team UNIQUE (chevalid, jockeyid, entraineurid),
+    CONSTRAINT ck_discipline_duo CHECK (discipline IN ('Galop', 'Trot'))
 );
 
 
@@ -125,7 +128,8 @@ CREATE TABLE Inscription(
     PRIMARY KEY (participationid, duoid),
     CONSTRAINT fk_inscrip_participation FOREIGN KEY (participationid) REFERENCES Participation(participationid),
     CONSTRAINT fk_inscrip_duo FOREIGN KEY (duoid) REFERENCES Duo(duoid),
-    CONSTRAINT ck_frais CHECK (frais_inscrip>=0)
+    CONSTRAINT ck_frais CHECK (frais_inscrip>=0),
+    CONSTRAINT ck_statut_inscrip CHECK (statut IN ('En cours', 'Validé', 'Refusé')) 
 );
 
 CREATE TABLE Appartient(
@@ -151,8 +155,7 @@ CREATE TABLE Paris(
     CONSTRAINT fk_paris_participation FOREIGN KEY (participationid) REFERENCES Participation(participationid),
     CONSTRAINT fk_paris_parieur FOREIGN KEY (parieurid) REFERENCES Parieur(parieurid),
     CONSTRAINT ck_montant CHECK (montant>=2 AND montant<=1000),
-    CONSTRAINT ck_type_paris CHECK (typeparis IN ('Simple Gagnant', 'Simple Placé')) 
+    CONSTRAINT ck_type_paris CHECK (typeparis IN ('Simple Gagnant', 'Simple Placé')),
     -- CONSTRAINT ck_placement CHECK (placement >0 AND placement <= 20) ???
+    CONSTRAINT ck_statut_paris CHECK (statut IN ('En cours', 'Gagné', 'Perdu', 'Payé')) 
 );
-
-
