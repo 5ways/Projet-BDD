@@ -37,7 +37,7 @@ CREATE TABLE Entraineur(
     CONSTRAINT ck_gain_entraineur CHECK (gain>=0)
 );
 
-CREATE TABLE Propietaire(
+CREATE TABLE Proprietaire(
     proprietaireid number(3) PRIMARY KEY,
     ecurie varchar(50),   
     nom varchar(30),          
@@ -154,4 +154,5 @@ CREATE TABLE Paris(
     CONSTRAINT ck_type_paris CHECK (typeparis IN ('Simple Gagnant', 'Simple Placé')) 
     -- CONSTRAINT ck_placement CHECK (placement >0 AND placement <= 20) ???
 );
+
 
