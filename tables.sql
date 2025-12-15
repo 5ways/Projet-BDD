@@ -8,7 +8,8 @@ CREATE TABLE Jockey(
     gain number(8),
 
     CONSTRAINT ck_poids_jockey CHECK (poids>=0),
-    CONSTRAINT ck_gain_jockey CHECK (gain>=0)
+    CONSTRAINT ck_gain_jockey CHECK (gain>=0),
+    CONSTRAINT ck_discipline_jockey CHECK (discipline IN ('Galop', 'Trot')) 
 );
 
 CREATE TABLE Cheval(
@@ -22,7 +23,8 @@ CREATE TABLE Cheval(
     gain number(8),
 
     CONSTRAINT ck_poids_cheval CHECK (poids>=0),
-    CONSTRAINT ck_gain_cheval CHECK (gain>=0)
+    CONSTRAINT ck_gain_cheval CHECK (gain>=0),
+    CONSTRAINT ck_discipline_cheval CHECK (discipline IN ('Galop', 'Trot')) 
 );
 
 CREATE TABLE Entraineur(
@@ -53,7 +55,8 @@ CREATE TABLE Organisateur(
     discipline varchar(20)NOT NULL,
     tresorerie number(8) NOT NULL,
 
-    CONSTRAINT ck_treso CHECK (tresorerie>=0)
+    CONSTRAINT ck_treso CHECK (tresorerie>=0),
+    CONSTRAINT ck_discipline_orga CHECK (discipline IN ('Galop', 'Trot','Mixte')) 
 );
 
 CREATE TABLE Course(
@@ -70,7 +73,10 @@ CREATE TABLE Course(
     
     CONSTRAINT fk_course_organisateur FOREIGN KEY (organisateurid) REFERENCES Organisateur(organisateurid),
     CONSTRAINT ck_distance CHECK (distance>=0),
-    CONSTRAINT ck_cashprize CHECK (cashprize>=0)
+    CONSTRAINT ck_cashprize CHECK (cashprize>=0),
+    CONSTRAINT ck_discipline_course CHECK (discipline IN ('Galop', 'Trot')),
+    CONSTRAINT ck_sous_discipline CHECK (sousdiscipline IN ('Attelé', 'Monté','Plat','Obstacle')),
+    CONSTRAINT ck_groupe  CHECK (groupe BETWEEN 0 AND 3)
 );
 
 
@@ -148,3 +154,4 @@ CREATE TABLE Paris(
     CONSTRAINT ck_type_paris CHECK (typeparis IN ('Simple Gagnant', 'Simple Placé')) 
     -- CONSTRAINT ck_placement CHECK (placement >0 AND placement <= 20) ???
 );
+
