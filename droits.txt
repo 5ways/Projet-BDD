@@ -1,0 +1,56 @@
+--commandes réalisées dans le terminal sql de oracle VM
+--les tables sont dans benchsql
+
+--se connecter en tant que sys
+sqlplus sys/oracle AS SYSDBA
+
+--administrateur
+CREATE USER administrateur IDENTIFIED BY motdepasse;
+GRANT CREATE SESSION TO administrateur;
+GRANT DBA TO administrateur;
+
+--organisateur
+CREATE USER organisateur IDENTIFIED BY motdepasse;
+GRANT CREATE SESSION TO organisateur;
+GRANT SELECT, INSERT, UPDATE, DELETE ON benchsqL.Entraineur TO organisateur;
+GRANT SELECT, INSERT, UPDATE, DELETE ON benchsqL.Cheval TO organisateur;
+GRANT SELECT, INSERT, UPDATE, DELETE ON benchsqL.Jockey TO organisateur;
+GRANT SELECT, INSERT, UPDATE, DELETE ON benchsqL.Proprietaire TO organisateur;
+GRANT SELECT, INSERT, UPDATE, DELETE ON benchsqL.Organisateur TO organisateur;
+GRANT SELECT, INSERT, UPDATE, DELETE ON benchsqL.Course TO organisateur;
+GRANT SELECT, INSERT, UPDATE, DELETE ON benchsqL.Participation TO organisateur;
+GRANT SELECT, INSERT, UPDATE, DELETE ON benchsqL.Duo TO organisateur;
+GRANT SELECT, INSERT, UPDATE, DELETE ON benchsqL.Inscription TO organisateur;
+GRANT SELECT ON benchsqL.Parieur TO organisateur;
+GRANT SELECT ON benchsqL.Paris TO organisateur;
+
+
+
+
+--entraineur_jockey
+CREATE USER entraineur_jockey IDENTIFIED BY motdepasse;
+GRANT CREATE SESSION TO entraineur_jockey;
+GRANT SELECT ON benchsqL.Entraineur    TO entraineur_jockey;
+GRANT SELECT ON benchsqL.Cheval        TO entraineur_jockey;
+GRANT SELECT ON benchsqL.Jockey        TO entraineur_jockey;
+GRANT SELECT ON benchsqL.Course         TO entraineur_jockey;
+GRANT SELECT ON benchsqL.Participation  TO entraineur_jockey;
+GRANT SELECT ON benchsqL.Duo            TO entraineur_jockey;
+GRANT SELECT ON benchsqL.Inscription    TO entraineur_jockey;
+
+
+
+
+-- proprietaire cheva
+CREATE USER proprietaire_cheval IDENTIFIED BY motdepasse;
+GRANT CREATE SESSION TO proprietaire_cheval;
+GRANT SELECT ON benchsqL.Entraineur    TO proprietaire_cheval;
+GRANT SELECT ON benchsqL.Cheval        TO proprietaire_cheval;
+GRANT SELECT ON benchsqL.Jockey        TO proprietaire_cheval;
+GRANT SELECT ON benchsqL.Proprietaire   TO proprietaire_cheval;
+GRANT SELECT ON benchsqL.Course         TO proprietaire_cheval;
+GRANT SELECT ON benchsqL.Participation  TO proprietaire_cheval;
+GRANT SELECT ON benchsqL.Duo            TO proprietaire_cheval;
+GRANT SELECT ON benchsqL.Inscription    TO proprietaire_cheval;
+GRANT SELECT ON benchsqL.Appartient     TO proprietaire_cheval;
+
