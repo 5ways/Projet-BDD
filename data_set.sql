@@ -217,7 +217,7 @@ VALUES
 (39, 'Roger', 'Sylvain', 'Francais', 0),       -- Entraîne Délia du Pommereux
 (40, 'Nivard', 'Franck', 'Francais', 0);       -- Entraîne aussi (ex: Kool du Caux jadis)
 
-INSERT INTO Propietaire (proprietaireid, ecurie, nom, prenom, nationalite, gain)
+INSERT INTO Proprietaire (proprietaireid, ecurie, nom, prenom, nationalite, gain)
 VALUES 
 -- Galop
 (1, NULL, 'Wertheimer', 'Alain', 'Francais', 0),
@@ -791,5 +791,6 @@ VALUES(1, 1, 46, 'Simple Gagnant', 47, 'Gagné'),
 (71, 30, 44, 'Simple Placé', 10, 'Perdu'),
 (72, 30, 20, 'Simple Placé', 36, 'Perdu'),
 (73, 30, 29, 'Simple Gagnant', 39, 'Perdu');
+
 
 
