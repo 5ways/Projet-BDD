@@ -28,5 +28,33 @@ BEGIN
             'The Duo is already registered for another race (' || v_conflict_count || ' conflict(s)) on the date ' || TO_CHAR(v_new_date, 'YYYY-MM-DD') || '.'
         );
     END IF;
-END
-\;
+END;
+/
+
+-- Un cheval doit avoir au minimum 3 ans pour participer à une course.
+CREATE TRIGGER age_restriction
+BEFORE INSERT ON Inscription
+DECLARE
+    date_of_birth date;
+    must_be_born date := ADD_MONTHS(SYSDATE, -36); -- must be born at least 3 years (36 months) ago from sign in date
+BEGIN
+    SELECT c.datenaiss INTO date_of_birth
+    FROM Cheval c, Duo d
+    WHERE d.duoid = :new.duoid AND -- Finding the duo that want to sign in
+    d.chevalid = c.chevalid; -- retrieve horse
+
+    IF SQL%NOTFOUND THEN
+        RAISE_APPLICATION_ERROR(
+            -20002, 
+            'Cannot retrieve the duo that want to sign in'
+        );
+    END IF;
+
+    IF date_of_birth > must_be_born THEN
+        RAISE_APPLICATION_ERROR(
+            -20003,
+            'Horse is too young to sign in'
+        );
+    END IF;
+END;
+/
