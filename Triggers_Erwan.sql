@@ -20,7 +20,7 @@ BEGIN
     i.duoid = :new.duoid AND -- Same Duo
     c.date_c = new_date AND -- Same Date
     c.lieu != new_place AND -- Different place
-    i.statut != 'Refusée'; -- Sign in accepted
+    i.statut != 'Refusée'; -- Sign in accepted or waiting for validation
 
     IF number_of_conflict > 0 THEN
         RAISE_APPLICATION_ERROR(
