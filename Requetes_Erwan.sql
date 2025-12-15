@@ -34,7 +34,7 @@ GROUP BY c.nom
 ORDER BY number_of_bet DESC
 LIMIT 5;
 
---Le TOP 5 des duos jockeys/chevaux ayant le plus de 1ère places, qui courent toujours en 2025.
+-- Le TOP 5 des duos jockeys/chevaux ayant le plus de 1ère places, qui courent toujours en 2025.
 SELECT d.jockeyid, d.chevalid, count(p.résultat) as number_of_wins
 FROM Duo d, Inscription i, Participation p
 WHERE d.duoid = i.duoid AND
@@ -58,11 +58,20 @@ WHERE j.jockeyid = d.jockeyid AND
 d.duoid = i.duoid AND
 i.participationid = p.participationid AND
 p.courseid = co.courseid AND
-co.nom like '%Grand Prix%' AND
+co.nom like '%Grand Prix%' AND -- contains Grand Prix in its title
 p.résultat = '1'
 GROUP BY j.jockeyid
 HAVING number_of_wins >= 3
-ORDER BY number_of_wins;
+ORDER BY number_of_wins DESC;
+
+-- Le type de pari le plus rentable pour le parieur, celui qui a le plus de gain par rapport à sa probabilité d’être gagnant.
+SELECT p.typeparis, avg(i.cote) as côte_moyenne
+FROM Paris p, Participation par, Inscription i
+WHERE p.participationid = par.participationid AND
+par.participationid = i.participationid
+GROUP BY p.typeparis
+ORDER BY côte_moyenne DESC
+LIMIT 1;
 
 -- Meilleur Race : Top 3 des races de chevaux avec le plus de 1ères places
 SELECT c.race, count(p.résultat) as number_of_wins
