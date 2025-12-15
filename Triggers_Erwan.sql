@@ -23,7 +23,10 @@ BEGIN
     i.statut != 'Refusée'; -- Sign in accepted
 
     IF number_of_conflict > 0 THEN
-        RAISE_APPLICATION_ERROR(-2001, 'Le Duo est déjà inscrit à un autre endroit pour le même jour')
+        RAISE_APPLICATION_ERROR(
+            -20001, 
+            'The Duo is already registered for another race (' || v_conflict_count || ' conflict(s)) on the date ' || TO_CHAR(v_new_date, 'YYYY-MM-DD') || '.'
+        );
     END IF;
 END
 \;
