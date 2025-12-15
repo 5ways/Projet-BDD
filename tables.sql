@@ -124,12 +124,14 @@ CREATE TABLE Inscription(
     duoid number(3), 
     frais_inscrip number(6) NOT NULL,
     statut varchar(20) NOT NULL,
+    cote number(5,2) NOT NULL,
     
     PRIMARY KEY (participationid, duoid),
     CONSTRAINT fk_inscrip_participation FOREIGN KEY (participationid) REFERENCES Participation(participationid),
     CONSTRAINT fk_inscrip_duo FOREIGN KEY (duoid) REFERENCES Duo(duoid),
     CONSTRAINT ck_frais CHECK (frais_inscrip>=0),
-    CONSTRAINT ck_statut_inscrip CHECK (statut IN ('En cours', 'Validé', 'Refusé')) 
+    CONSTRAINT ck_statut_inscrip CHECK (statut IN ('En cours', 'Validé', 'Refusé')) ,
+    CONSTRAINT ck_cote CHECK (cote >= 1.1)
 );
 
 CREATE TABLE Appartient(
@@ -159,3 +161,4 @@ CREATE TABLE Paris(
     -- CONSTRAINT ck_placement CHECK (placement >0 AND placement <= 20) ???
     CONSTRAINT ck_statut_paris CHECK (statut IN ('En cours', 'Gagné', 'Perdu', 'Payé')) 
 );
+
