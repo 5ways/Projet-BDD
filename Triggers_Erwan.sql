@@ -65,8 +65,9 @@ END not_allowed_to_sign_in;
 /
 
 -- Un cheval doit avoir au minimum 3 ans pour participer à une course.
-CREATE TRIGGER age_restriction
-BEFORE INSERT OR UPDATE ON Inscription
+CREATE OR REPLACE TRIGGER age_restriction
+BEFORE INSERT OR UPDATE ON Inscription 
+FOR EACH ROW
 DECLARE
     date_of_birth date;
     must_be_born date := ADD_MONTHS(SYSDATE, -36); -- must be born at least 3 years (36 months) ago from sign in date
