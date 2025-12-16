@@ -215,7 +215,7 @@ BEGIN
 
     IF INSERTING THEN
         SELECT p.solde INTO v_solde_actuel
-        FROM Parieur
+        FROM Parieur p
         WHERE :NEW.parieurid = p.parieurid;
 
         IF (v_solde_actuel - :NEW.montant) < 0 THEN
@@ -268,3 +268,4 @@ BEGIN
 
 END;
 /
+
