@@ -252,3 +252,19 @@ BEGIN
     END IF;
 END;
 /
+
+-- Versement des frais à l'organisateur 
+CREATE OR REPLACE TRIGGER payement_inscription
+BEFORE INSERT OR UPDATE ON Inscription FOR EACH ROW
+DECLARE 
+    v_org Organisateur.organisateurid%TYPE;
+
+BEGIN
+    SELECT o.organisateurid INTO v_org
+    FROM Organisateur o, Course c, Participation p
+    WHERE o.organisateurid  = c.organisateurid AND c.courseid = p.courseid AND p.participationid = :NEW.participationid;
+
+    UPDATE Organisateur SET tresorerie = tresorerie + :NEW.frais_inscrip WHERE organisateurid = v_org; 
+
+END;
+/
