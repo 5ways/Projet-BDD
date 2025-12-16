@@ -19,47 +19,47 @@ AND c.chevalid NOT IN (
     i.duoid = d.duoid AND
     p.participationid = i.participationid AND 
     p.resultat = '1' AND 
-    co.date >= ADD_MONTHS(SYSDATE, -12) -- Race was in the last 12 months
+    co.date_c >= ADD_MONTHS(SYSDATE, -12) -- Race was in the last 12 months
 );
 
 -- Le TOP 5 des chevaux les plus populaires, ceux qui ont suscité le plus grand nombre de paris.
 -- Les chevaux n'ayant pas de paris assignés ne seront pas inclus dans le résultat de la requête
-SELECT c.nom, count(m.parisid) as number_of_bet
-FROM Cheval c, Mise m, Inscription i, Duo d, Participation p
+SELECT c.nom, count(*) as number_of_bet
+FROM Cheval c, Paris pa, Inscription i, Duo d, Participation p
 WHERE c.chevalid = d.chevalid AND
 d.duoid = i.duoid AND
 i.participationid = p.participationid AND
-p.participationid = m.participationid
+p.participationid = pa.participationid
 GROUP BY c.nom
 ORDER BY number_of_bet DESC
 FETCH FIRST 5 ROWS ONLY;
 
 -- Le TOP 5 des duos jockeys/chevaux ayant le plus de 1ère places, qui courent toujours en 2025.
-SELECT d.jockeyid, d.chevalid, count(p.résultat) as number_of_wins
+SELECT d.jockeyid, d.chevalid, count(*) as number_of_wins
 FROM Duo d, Inscription i, Participation p
 WHERE d.duoid = i.duoid AND
 i.participationid = p.participationid AND
 p.resultat = '1' AND
 i.duoid in ( -- verify if the duo is actually in the list of 2025 runners
-    SELECT *
+    SELECT i2.duoid
     FROM Course co, Participation p2, Inscription i2
     WHERE i2.participationid = p2.participationid AND
     p2.courseid = co.courseid AND
-    co.date >= TO_DATE('2025-01-01')
+    co.date_c >= TO_DATE('2025-01-01', 'YYYY-MM-DD')
 )
 GROUP BY d.jockeyid, d.chevalid
 ORDER BY number_of_wins DESC
 FETCH FIRST 5 ROWS ONLY;
 
 -- Jockey de légende, ceux ayant gagné au moins 3 Grand Prix dans leur carrière.
-SELECT j.jockeyid, count(p.résultat) as number_of_wins
+SELECT j.jockeyid, count(*) as number_of_wins
 FROM Jockey j, Duo d, Inscription i, Participation p, Course co
 WHERE j.jockeyid = d.jockeyid AND
 d.duoid = i.duoid AND
 i.participationid = p.participationid AND
 p.courseid = co.courseid AND
 co.nom like '%Grand Prix%' AND -- contains Grand Prix in its title
-p.résultat = '1'
+p.resultat = '1'
 GROUP BY j.jockeyid
 HAVING number_of_wins >= 3
 ORDER BY number_of_wins DESC;
@@ -74,12 +74,12 @@ ORDER BY côte_moyenne DESC
 FETCH FIRST 1 ROWS ONLY;
 
 -- Meilleur Race : Top 3 des races de chevaux avec le plus de 1ères places
-SELECT c.race, count(p.résultat) as number_of_wins
+SELECT c.race, count(*) as number_of_wins
 FROM Cheval c, Duo d, Inscription i, Participation p
 WHERE c.chevalid = d.chevalid AND
 d.duoid = i.duoid AND
 i.participationid = p.participationid AND
-p.résultat = '1'
+p.resultat = '1'
 GROUP BY c.race
 ORDER BY number_of_wins DESC
 FETCH FIRST 3 ROWS ONLY;
