@@ -150,3 +150,24 @@ BEGIN
   END IF;
 END;
 /
+
+-- Un parieur ne peut pas parier un montant supérieur à celui de son solde.
+CREATE OR REPLACE TRIGGER trg_not_enough_money_for_the_bet
+BEFORE INSERT OR UPDATE ON Paris
+FOR EACH ROW
+DECLARE
+  user_balance Parieur.solde%TYPE;
+BEGIN
+  -- Retrieve User balance
+  SELECT p.solde INTO user_balance
+  FROM Parieur p
+  WHERE p.parieurid = :new.parieurid;
+
+  IF user_balance < :new.montant THEN
+    RAISE_APPLICATION_ERROR(
+      -20207,
+      'Solde du compte du Parieur insuffisant'
+    );
+  END IF;
+END;
+/
