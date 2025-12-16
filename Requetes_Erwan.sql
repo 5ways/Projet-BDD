@@ -32,7 +32,7 @@ i.participationid = p.participationid AND
 p.participationid = m.participationid
 GROUP BY c.nom
 ORDER BY number_of_bet DESC
-LIMIT 5;
+FETCH FIRST 5 ROWS ONLY;
 
 -- Le TOP 5 des duos jockeys/chevaux ayant le plus de 1ère places, qui courent toujours en 2025.
 SELECT d.jockeyid, d.chevalid, count(p.résultat) as number_of_wins
@@ -49,7 +49,7 @@ i.duoid in ( -- verify if the duo is actually in the list of 2025 runners
 )
 GROUP BY d.jockeyid, d.chevalid
 ORDER BY number_of_wins DESC
-LIMIT 5;
+FETCH FIRST 5 ROWS ONLY;
 
 -- Jockey de légende, ceux ayant gagné au moins 3 Grand Prix dans leur carrière.
 SELECT j.jockeyid, count(p.résultat) as number_of_wins
@@ -71,7 +71,7 @@ WHERE p.participationid = par.participationid AND
 par.participationid = i.participationid
 GROUP BY p.typeparis
 ORDER BY côte_moyenne DESC
-LIMIT 1;
+FETCH FIRST 1 ROWS ONLY;
 
 -- Meilleur Race : Top 3 des races de chevaux avec le plus de 1ères places
 SELECT c.race, count(p.résultat) as number_of_wins
@@ -82,4 +82,4 @@ i.participationid = p.participationid AND
 p.résultat = '1'
 GROUP BY c.race
 ORDER BY number_of_wins DESC
-LIMIT 3;
+FETCH FIRST 3 ROWS ONLY;
