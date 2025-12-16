@@ -129,3 +129,24 @@ BEGIN
   END IF;
 END;
 /
+
+-- On ne peut pas parier sur un duo jockey/cheval et une course si le duo ne participe pas à la course.
+CREATE OR REPLACE TRIGGER trg_bet_possible
+BEFORE INSERT OR UPDATE ON Paris
+FOR EACH ROW
+DECLARE
+  register_status Participation.statut%TYPE;
+BEGIN
+  -- Recover the status of the participation that user bet on
+  SELECT p.statut INTO register_status
+  FROM Participation p
+  WHERE p.participationid = :new.participationid;
+
+  IF register_status = 'Annulé' THEN
+    RAISE_APPLICATION_ERROR(
+      -20006,
+      'La participation sur laquelle le parieur souhaite parier à été annulé'
+    );
+  END IF;
+END;
+/
