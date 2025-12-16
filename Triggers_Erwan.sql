@@ -1,55 +1,67 @@
 --Un jockey ne peut pas participer à plusieurs courses situées dans des endroits différents le même jour.
-CREATE TRIGGER not_allowed_to_sign_in
-BEFORE INSERT OR UPDATE ON Inscription
-DECLARE
-    jockey_wants_to Jockey.jockeyid%TYPE;
-    new_date Course.date%TYPE;
-    new_place Course.lieu%TYPE;
-    number_of_conflict number;
-BEGIN
-    -- Recover the Jockey that wants to sign in
-    SELECT d1.jockeyid INTO jockey_wants_to
-    FROM Duo d1
-    WHERE d1.duoid = :new.duoid;
+CREATE OR REPLACE TRIGGER not_allowed_to_sign_in
+FOR INSERT OR UPDATE ON Inscription
+COMPOUND TRIGGER
 
-    IF SQL%NOTFOUND THEN
-        RAISE_APPLICATION_ERROR(
-            -20001,
-            'Cannot retrieve the jockey that wants to sign in'
+  TYPE t_row IS RECORD (
+    jockeyid Jockey.jockeyid%TYPE,
+    date_c   Course.date_c%TYPE,
+    lieu     Course.lieu%TYPE,
+    duoid    Inscription.duoid%TYPE,
+    participationid Inscription.participationid%TYPE
+  );
+
+  TYPE t_tab IS TABLE OF t_row INDEX BY PLS_INTEGER;
+  g_rows t_tab;
+  g_idx  PLS_INTEGER := 0;
+
+  BEFORE EACH ROW IS
+  BEGIN
+    g_idx := g_idx + 1;
+
+    SELECT d.jockeyid, c.date_c, c.lieu
+    INTO g_rows(g_idx).jockeyid,
+         g_rows(g_idx).date_c,
+         g_rows(g_idx).lieu
+    FROM Duo d
+    JOIN Participation p ON p.participationid = :NEW.participationid
+    JOIN Course c ON c.courseid = p.courseid
+    WHERE d.duoid = :NEW.duoid;
+
+    g_rows(g_idx).duoid := :NEW.duoid;
+    g_rows(g_idx).participationid := :NEW.participationid;
+  END BEFORE EACH ROW;
+
+  AFTER STATEMENT IS
+    v_conflicts NUMBER;
+  BEGIN
+    FOR i IN 1 .. g_idx LOOP
+      SELECT COUNT(*)
+      INTO v_conflicts
+      FROM Inscription i2
+      JOIN Duo d2 ON i2.duoid = d2.duoid
+      JOIN Participation p2 ON i2.participationid = p2.participationid
+      JOIN Course c2 ON c2.courseid = p2.courseid
+      WHERE d2.jockeyid = g_rows(i).jockeyid
+        AND c2.date_c = g_rows(i).date_c
+        AND c2.lieu != g_rows(i).lieu
+        AND i2.statut != 'Refusée'
+        AND NOT (
+              i2.duoid = g_rows(i).duoid
+          AND i2.participationid = g_rows(i).participationid
         );
-    END IF;
 
-    -- Recover the date and place of race
-    SELECT c1.date_c, c1.lieu INTO new_date, new_place
-    FROM Participation p1, Course c1
-    WHERE p1.courseid = c1.courseid AND
-    :new.participationid = p1.participationid;
-
-    IF SQL%NOTFOUND THEN
+      IF v_conflicts > 0 THEN
         RAISE_APPLICATION_ERROR(
-            -20002,
-            'Cannot retrieve date and/or place of race'
+          -20001,
+          'The jockey is already registered for another race on '
+          || TO_CHAR(g_rows(i).date_c, 'YYYY-MM-DD')
         );
-    END if;
+      END IF;
+    END LOOP;
+  END AFTER STATEMENT;
 
-    -- Searching Races where runners are already signed in at the same date but at a different place 
-    SELECT COUNT(*) INTO number_of_conflict
-    FROM Inscription i, Participation p, Course c, Duo d
-    WHERE i.participationid = p.participationid AND
-    p.courseid = c.courseid AND
-    i.duoid = d.duoid AND
-    d.jockeyid = jockey_wants_to -- Same Jockey
-    c.date_c = new_date AND -- Same Date
-    c.lieu != new_place AND -- Different place
-    i.statut != 'Refusée'; -- Sign in accepted or waiting for validation
-
-    IF number_of_conflict > 0 THEN
-        RAISE_APPLICATION_ERROR(
-            -20001, 
-            'The Jockey is already registered for another race (' || v_conflict_count || ' conflict(s)) on the date ' || TO_CHAR(v_new_date, 'YYYY-MM-DD') || '.'
-        );
-    END IF;
-END;
+END not_allowed_to_sign_in;
 /
 
 -- Un cheval doit avoir au minimum 3 ans pour participer à une course.
