@@ -140,7 +140,7 @@ CREATE TABLE Appartient(
     part number(3),
     
     PRIMARY KEY (proprietaireid, chevalid),
-    CONSTRAINT fk_app_proprietaire FOREIGN KEY (proprietaireid) REFERENCES Propietaire(proprietaireid),
+    CONSTRAINT fk_app_proprietaire FOREIGN KEY (proprietaireid) REFERENCES Proprietaire(proprietaireid),
     CONSTRAINT fk_app_cheval FOREIGN KEY (chevalid) REFERENCES Cheval(chevalid),
     CONSTRAINT ck_part CHECK (part>=0 AND part<=100)
 );
@@ -161,4 +161,5 @@ CREATE TABLE Paris(
     -- CONSTRAINT ck_placement CHECK (placement >0 AND placement <= 20) ???
     CONSTRAINT ck_statut_paris CHECK (statut IN ('En cours', 'Gagné', 'Perdu', 'Payé')) 
 );
+
 
