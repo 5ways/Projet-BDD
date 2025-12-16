@@ -106,21 +106,21 @@ VALUES
 (16, 'Alohi Alii', '2019-02-10', 'Pur-sang', 'F', 538.7, 'Galop', 0),
 (17, 'Minnie Hauk', '2022-04-15', 'Pur-sang', 'F', 524.3, 'Galop', 0),
 (18, 'Gezora', '2021-04-01', 'Pur-sang', 'F', 533.6, 'Galop', 0),
-(19, 'Il Est Français', '2017-04-24', 'AQPS', 'H', 590.5, 'Galop', 0),
+(19, 'Il Est Français', '2017-04-24', 'AQPS', 'M', 590.5, 'Galop', 0),
 (20, 'Hello Youmzain', '2016-03-18', 'Pur-sang', 'M', 575.2, 'Galop', 0),
-(21, 'Juntos Ganamos', '2019-05-11', 'Anglo-Arabe', 'H', 515.8, 'Galop', 0),
-(22, 'Télème', '2018-02-20', 'AQPS', 'H', 588.4, 'Galop', 0),
+(21, 'Juntos Ganamos', '2019-05-11', 'Anglo-Arabe', 'M', 515.8, 'Galop', 0),
+(22, 'Télème', '2018-02-20', 'AQPS', 'M', 588.4, 'Galop', 0),
 (23, 'Jelitobum', '2019-03-09', 'AQPS', 'M', 567.1, 'Galop', 0),
 (24, 'Icare Allen', '2018-03-30', 'Pur-sang', 'M', 555.3, 'Galop', 0),
 (25, 'Jippie du Cerisier', '2019-04-14', 'Anglo-Arabe', 'F', 505.6, 'Galop', 0),
-(26, 'Raffles Face', '2017-05-22', 'Selle Français', 'H', 610.2, 'Galop', 0),
-(27, 'Hermès Baie', '2017-02-13', 'Selle Français', 'H', 620.5, 'Galop', 0),
+(26, 'Raffles Face', '2017-05-22', 'Selle Français', 'M', 610.2, 'Galop', 0),
+(27, 'Hermès Baie', '2017-02-13', 'Selle Français', 'M', 620.5, 'Galop', 0),
 (28, 'Goliath du Berlais', '2016-04-12', 'Selle Français', 'M', 630.1, 'Galop', 0),
 (29, 'Big Rock', '2020-03-11', 'Pur-sang', 'M', 565.4, 'Galop', 0),
 (30, 'Feed The Flame', '2020-02-02', 'Pur-sang', 'M', 575.7, 'Galop', 0),
 (31, 'Blue Rose Cen', '2020-04-27', 'Pur-sang', 'F', 510.3, 'Galop', 0),
 (32, 'Ace Impact', '2020-04-06', 'Pur-sang', 'M', 570.2, 'Galop', 0),
-(33, 'Horizon Dore', '2020-04-08', 'Pur-sang', 'H', 560.8, 'Galop', 0),
+(33, 'Horizon Dore', '2020-04-08', 'Pur-sang', 'M', 560.8, 'Galop', 0),
 (34, 'Simca Mille', '2019-04-21', 'Pur-sang', 'M', 580.4, 'Galop', 0),
 (35, 'Astre Royal', '2021-04-19', 'AQPS', 'M', 560.6, 'Galop', 0),
 (36, 'Quintessia', '2020-03-12', 'Pur-sang Arabe', 'F', 470.2, 'Galop', 0),
@@ -165,7 +165,7 @@ VALUES
 (74, 'Elie de Beaufour', '2014-02-28', 'Trotteur Francais', 'H', 525.00, 'Trot', 0),
 (75, 'Fakir de Mahey', '2015-04-10', 'Trotteur Francais', 'M', 500.00, 'Trot', 0),
 (76, 'Ganay de Banville', '2016-01-20', 'Trotteur Francais', 'M', 530.00, 'Trot', 0),
-(77, 'Gaspar de Brion', '2016-05-12', 'Trotteur Francais', 'H', 490.00, 'Trot', 0),
+(77, 'Gaspar de Brion', '2016-05-12', 'Trotteur Francais', 'M', 490.00, 'Trot', 0),
 (78, 'Happy Valley', '2017-04-05', 'Trotteur Francais', 'F', 460.00, 'Trot', 0),
 (79, 'Inmarosa', '2018-03-30', 'Trotteur Francais', 'F', 455.00, 'Trot', 0),
 (80, 'Ideal du Pommeau', '2018-02-15', 'Trotteur Francais', 'M', 505.00, 'Trot', 0);
@@ -174,48 +174,48 @@ VALUES
 INSERT INTO Entraineur (entraineurid, nom, prenom, nationalite, gain)
 VALUES 
 -- Galop
-(1, 'Fabre', 'André', 'Francais', 0),        -- Entraîne Sosie, Tribalist...
-(2, 'O''Brien', 'Aidan', 'Irlandais', 0),    -- Entraîne Los Angeles, City of Troy
-(3, 'Rouget', 'Jean-Claude', 'Francais', 0), -- Entraîne Ace Impact, Arrow Eagle
-(4, 'Graffard', 'Francis-Henri', 'Francais', 0), -- Entraîne Calandagan, Goliath
-(5, 'Head', 'Christopher', 'Francais', 0),   -- Entraîne Blue Rose Cen, Ramatuelle
-(6, 'Botti', 'Marco', 'Italien', 0),         -- Entraîne Giavellotto
-(7, 'Murphy', 'John-Joseph', 'Irlandais', 0),-- Entraîne White Birch
-(8, 'Reynier', 'Jérôme', 'Francais', 0),     -- Entraîne Facteur Cheval
-(9, 'Cottier', 'Patrice', 'Francais', 0),    -- Entraîne Sparkling Plenty
-(10, 'Barberot', 'Yann', 'Francais', 0),     -- Entraîne Beauvatier
-(11, 'Ferland', 'Christophe', 'Francais', 0),-- Entraîne Aventure
-(12, 'Wattel', 'Stéphane', 'Francais', 0),   -- Entraîne Big Rock (ex-entraîneur)
-(13, 'Appleby', 'Charlie', 'Anglais', 0),    -- Godolphin (Rebel's Romance)
-(14, 'Haggas', 'William', 'Anglais', 0),     -- Entraîne Economics
-(15, 'George', 'Noel', 'Anglais', 0),        -- Entraîne Il Est Français
-(16, 'Chaillé-Chaillé', 'Arnaud', 'Francais', 0), -- Entraîne Télème
-(17, 'Nicolle', 'François', 'Francais', 0),  -- Entraîne Hermès Baie
-(18, 'Macaire', 'Guillaume', 'Francais', 0), -- Entraîne Goliath du Berlais (historique)
-(19, 'Cottin', 'David', 'Francais', 0),      -- Entraîne Juntos Ganamos
-(20, 'Leenders', 'Gabriel', 'Francais', 0),  -- Top entraîneur obstacle
+(1, 'Fabre', 'André', 'Francais', 0),        
+(2, 'O''Brien', 'Aidan', 'Irlandais', 0),    
+(3, 'Rouget', 'Jean-Claude', 'Francais', 0), 
+(4, 'Graffard', 'Francis-Henri', 'Francais', 0), 
+(5, 'Head', 'Christopher', 'Francais', 0),
+(6, 'Botti', 'Marco', 'Italien', 0),        
+(7, 'Murphy', 'John-Joseph', 'Irlandais', 0),
+(8, 'Reynier', 'Jérôme', 'Francais', 0),     
+(9, 'Cottier', 'Patrice', 'Francais', 0),    
+(10, 'Barberot', 'Yann', 'Francais', 0),   
+(11, 'Ferland', 'Christophe', 'Francais', 0),
+(12, 'Wattel', 'Stéphane', 'Francais', 0),   
+(13, 'Appleby', 'Charlie', 'Anglais', 0),    
+(14, 'Haggas', 'William', 'Anglais', 0),   
+(15, 'George', 'Noel', 'Anglais', 0),   
+(16, 'Chaillé-Chaillé', 'Arnaud', 'Francais', 0),
+(17, 'Nicolle', 'François', 'Francais', 0),  
+(18, 'Macaire', 'Guillaume', 'Francais', 0), 
+(19, 'Cottin', 'David', 'Francais', 0),    
+(20, 'Leenders', 'Gabriel', 'Francais', 0),  
 
 -- trot
-(21, 'Duvaldestin', 'Thierry', 'Francais', 0), -- Entraîne Idao de Tillard
-(22, 'Belloche', 'Pierre', 'Francais', 0),     -- Entraîne Horsy Dream
-(23, 'Bazire', 'Jean-Michel', 'Francais', 0),  -- Entraîne Hooker Berry, Jushua Tree
-(24, 'Dersoir', 'Jean-Luc', 'Francais', 0),    -- Entraîne Hokkaido Jiel
-(25, 'Derieux', 'Romain', 'Francais', 0),      -- Entraîne Go On Boy
-(26, 'Robin', 'Benoît', 'Francais', 0),        -- Entraîne Hussard du Landret
-(27, 'Allaire', 'Philippe', 'Francais', 0),    -- Entraîne Italiano Vero, Koctel du Dain
-(28, 'Guarato', 'Sébastien', 'Francais', 0),   -- Entraîne Krack Time Atout
-(29, 'Souloy', 'Fabrice', 'Francais', 0),      -- Entraîne Ampia Mede SM, Gu d'Héripré
-(30, 'Goop', 'Bjorn', 'Suedois', 0),           -- Entraîne San Moteur, Joviality (parfois)
-(31, 'Gocciadoro', 'Alessandro', 'Italien', 0),-- Entraîne Vivid Wise As, Vernissage Grif
-(32, 'Redén', 'Daniel', 'Suedois', 0),         -- Entraîne Don Fanucci Zet, Hail Mary
-(33, 'Abrivard', 'Laurent-Claude', 'Francais', 0), -- Entraîne Inmarosa, Just A Gigolo
-(34, 'Mottier', 'Mathieu', 'Francais', 0),     -- Spécialiste Monté & Attelé
-(35, 'Bigeon', 'Christian', 'Francais', 0),    -- Entraîne Hip Hop Haufor
-(36, 'Thomain', 'Clément', 'Francais', 0),     -- Famille Thomain
-(37, 'Malmqvist', 'Tomas', 'Suedois', 0),      -- Entraîne Jazzy Perrine
-(38, 'Westerink', 'Richard', 'Hollandais', 0), -- Entraîne Etonnant
-(39, 'Roger', 'Sylvain', 'Francais', 0),       -- Entraîne Délia du Pommereux
-(40, 'Nivard', 'Franck', 'Francais', 0);       -- Entraîne aussi (ex: Kool du Caux jadis)
+(21, 'Duvaldestin', 'Thierry', 'Francais', 0),
+(22, 'Belloche', 'Pierre', 'Francais', 0),     
+(23, 'Bazire', 'Jean-Michel', 'Francais', 0), 
+(24, 'Dersoir', 'Jean-Luc', 'Francais', 0),   
+(25, 'Derieux', 'Romain', 'Francais', 0),   
+(26, 'Robin', 'Benoît', 'Francais', 0),        
+(27, 'Allaire', 'Philippe', 'Francais', 0),    
+(28, 'Guarato', 'Sébastien', 'Francais', 0),  
+(29, 'Souloy', 'Fabrice', 'Francais', 0),   
+(30, 'Goop', 'Bjorn', 'Suedois', 0),        
+(31, 'Gocciadoro', 'Alessandro', 'Italien', 0),
+(32, 'Redén', 'Daniel', 'Suedois', 0),      
+(33, 'Abrivard', 'Laurent-Claude', 'Francais', 0),
+(34, 'Mottier', 'Mathieu', 'Francais', 0), 
+(35, 'Bigeon', 'Christian', 'Francais', 0),  
+(36, 'Thomain', 'Clément', 'Francais', 0),    
+(37, 'Malmqvist', 'Tomas', 'Suedois', 0),     
+(38, 'Westerink', 'Richard', 'Hollandais', 0),
+(39, 'Roger', 'Sylvain', 'Francais', 0),       
+(40, 'Nivard', 'Franck', 'Francais', 0);       
 
 INSERT INTO Proprietaire (proprietaireid, ecurie, nom, prenom, nationalite, gain)
 VALUES 
@@ -288,6 +288,7 @@ VALUES
 (19, 17, 100), -- Minnie Hauk (Niarchos)
 (7, 18, 100),  -- Gezora (Caro)
 (16, 19, 100), -- Il Est Français (White Birch)
+(15, 20, 100),
 (17, 21, 100), -- Juntos Ganamos (Gousserie)
 (4, 22, 100),  -- Télème (Bouchard)
 (4, 23, 100),  -- Jelitobum
@@ -338,6 +339,8 @@ VALUES
 (38, 55, 100), -- Don Fanucci Zet
 (28, 56, 100), -- Vernissage Grif
 (39, 57, 100), -- Joviality
+(25, 58, 100),
+(36, 59, 100),
 (24, 60, 100), -- Bengurion Jet
 (21, 61, 100), -- Jushua Tree
 (22, 62, 100), -- Just A Gigolo
@@ -415,9 +418,9 @@ VALUES
 (1, 'Prix de l''Arc de Triomphe', '2025-10-05 16:05', 'Galop', 'Plat', 2400, 1, 5000000, 'ParisLongchamp', 1),
 (58, 'Prix de l''Opéra', '2025-10-05 16:50', 'Galop', 'Plat', 2000, 1, 500000, 'ParisLongchamp', 1),
 -- RÉUNION TEST 3
-(59, 'Prix Ferdinand Dufaure', '2025-05-18 14:40', 'Obstacle', 'Steeple', 4400, 1, 350000, 'Auteuil', 1),
-(60, 'Prix Alain du Breil', '2025-05-18 15:30', 'Obstacle', 'Haies', 3900, 1, 250000, 'Auteuil', 1),
-(36, 'Grand Steeple-Chase de Paris', '2025-05-18 16:00', 'Obstacle', 'Steeple', 6000, 1, 850000, 'Auteuil', 1),
+(59, 'Prix Ferdinand Dufaure', '2025-05-18 14:40', 'Galop', 'Obstacle', 4400, 1, 350000, 'Auteuil', 1),
+(60, 'Prix Alain du Breil', '2025-05-18 15:30', 'Galop', 'Obstacle', 3900, 1, 250000, 'Auteuil', 1),
+(36, 'Grand Steeple-Chase de Paris', '2025-05-18 16:00', 'Galop', 'Obstacle', 6000, 1, 850000, 'Auteuil', 1),
 -- CLASH HORAIRE (Pour test conflit)
 (3, 'Grand Prix du PMU', '2025-05-18 15:15', 'Galop', 'Plat', 1600, 2, 120000, 'ParisLongchamp', 3),
 -- courses
@@ -438,10 +441,10 @@ VALUES
 (18, 'Prix Jacques Le Marois', '2025-08-17 16:25', 'Galop', 'Plat', 1600, 1, 1000000, 'Deauville', 17),
 (19, 'Grand Prix de la Riviera', '2025-02-09 13:50', 'Galop', 'Plat', 2000, 0, 60000, 'Cagnes-sur-Mer', 18),
 (20, 'Grand Criterium de Vitesse', '2025-03-09 15:15', 'Trot', 'Attelé', 1609, 1, 200000, 'Cagnes-sur-Mer', 18),
-(21, 'Grand Prix de Pau', '2025-01-19 15:15', 'Obstacle', 'Steeple', 5300, 3, 154000, 'Pau', 19),
-(22, 'Grande Course de Haies de Pau', '2025-02-02 14:35', 'Obstacle', 'Haies', 4100, 0, 105000, 'Pau', 19),
+(21, 'Grand Prix de Pau', '2025-01-19 15:15', 'Galop', 'Obstacle', 5300, 3, 154000, 'Pau', 19),
+(22, 'Grande Course de Haies de Pau', '2025-02-02 14:35', 'Galop', 'Obstacle', 4100, 0, 105000, 'Pau', 19),
 (23, 'Grand Prix de Vichy', '2025-07-16 20:15', 'Galop', 'Plat', 2000, 3, 80000, 'Vichy', 20),
-(24, 'Grand Cross de Craon', '2025-09-07 16:30', 'Obstacle', 'Cross', 6000, 0, 75000, 'Craon', 21),
+(24, 'Grand Cross de Craon', '2025-09-07 16:30', 'Galop', 'Obstacle', 6000, 0, 75000, 'Craon', 21),
 (25, 'GNT Etape de Nantes', '2024-11-06 13:50', 'Trot', 'Attelé', 3000, 3, 90000, 'Nantes', 22),
 (26, 'Criterium de Lyon', '2024-09-19 14:00', 'Galop', 'Plat', 1600, 0, 60000, 'Lyon-Parilly', 23),
 (27, 'GNT Etape de Marseille', '2025-03-26 13:50', 'Trot', 'Attelé', 3000, 3, 90000, 'Marseille-Borely', 24),
@@ -453,7 +456,8 @@ VALUES
 (33, 'GNT Etape 1 Amiens', '2025-03-05 13:50', 'Trot', 'Attelé', 2900, 3, 90000, 'Amiens', 30),
 (34, 'Prix du Jockey Club', '2025-06-01 16:05', 'Galop', 'Plat', 2100, 1, 1500000, 'Chantilly', 1),
 (35, 'Prix de Diane', '2025-06-15 16:05', 'Galop', 'Plat', 2100, 1, 1000000, 'Chantilly', 1),
-(37, 'Grande Course de Haies', '2025-05-17 15:15', 'Obstacle', 'Haies', 5100, 1, 400000, 'Auteuil', 1),
+(36, 'Criterium des 4 ans', '2025-09-07 15:15', 'Tror', 'Attelé', 2700, 1, 350000, 'Vincennes',2),
+(37, 'Grande Course de Haies', '2025-05-17 15:15', 'Galop', 'Obstacle', 5100, 1, 400000, 'Auteuil', 1),
 (38, 'Prix Ganay', '2025-04-27 15:50', 'Galop', 'Plat', 2100, 1, 300000, 'ParisLongchamp', 1),
 (39, 'Poule d''Essai des Poulains', '2025-05-11 15:15', 'Galop', 'Plat', 1600, 1, 650000, 'ParisLongchamp', 1),
 (40, 'Prix de France', '2025-02-09 16:25', 'Trot', 'Attelé', 2100, 1, 400000, 'Vincennes', 2),
@@ -791,7 +795,3 @@ VALUES(1, 1, 46, 'Simple Gagnant', 47, 'Gagné'),
 (71, 30, 44, 'Simple Placé', 10, 'Perdu'),
 (72, 30, 20, 'Simple Placé', 36, 'Perdu'),
 (73, 30, 29, 'Simple Gagnant', 39, 'Perdu');
-
-
-
-
