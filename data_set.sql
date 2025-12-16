@@ -456,7 +456,7 @@ VALUES
 (33, 'GNT Etape 1 Amiens', '2025-03-05 13:50', 'Trot', 'Attelé', 2900, 3, 90000, 'Amiens', 30),
 (34, 'Prix du Jockey Club', '2025-06-01 16:05', 'Galop', 'Plat', 2100, 1, 1500000, 'Chantilly', 1),
 (35, 'Prix de Diane', '2025-06-15 16:05', 'Galop', 'Plat', 2100, 1, 1000000, 'Chantilly', 1),
-(36, 'Criterium des 4 ans', '2025-09-07 15:15', 'Tror', 'Attelé', 2700, 1, 350000, 'Vincennes',2),
+(61, 'Criterium des 4 ans', '2025-09-07 15:15', 'Tror', 'Attelé', 2700, 1, 350000, 'Vincennes',2),
 (37, 'Grande Course de Haies', '2025-05-17 15:15', 'Galop', 'Obstacle', 5100, 1, 400000, 'Auteuil', 1),
 (38, 'Prix Ganay', '2025-04-27 15:50', 'Galop', 'Plat', 2100, 1, 300000, 'ParisLongchamp', 1),
 (39, 'Poule d''Essai des Poulains', '2025-05-11 15:15', 'Galop', 'Plat', 1600, 1, 650000, 'ParisLongchamp', 1),
