@@ -53,7 +53,7 @@ COMPOUND TRIGGER
 
       IF v_conflicts > 0 THEN
         RAISE_APPLICATION_ERROR(
-          -20001,
+          -20201,
           'The jockey is already registered for another race on '
           || TO_CHAR(g_rows(i).date_c, 'YYYY-MM-DD')
         );
@@ -79,14 +79,14 @@ BEGIN
 
     IF SQL%NOTFOUND THEN
         RAISE_APPLICATION_ERROR(
-            -20002, 
+            -20202, 
             'Cannot retrieve the duo that want to sign in'
         );
     END IF;
 
     IF date_of_birth > must_be_born THEN
         RAISE_APPLICATION_ERROR(
-            -20003,
+            -20203,
             'Horse is too young to sign in'
         );
     END IF;
@@ -100,7 +100,7 @@ FOR EACH ROW
 BEGIN
     IF :new.datenaiss > ADD_MONTHS(SYSDATE, -216) THEN -- the user must be born 18years (216 months) ago
         RAISE_APPLICATION_ERROR(
-          -20004,
+          -20204,
           'Le parieur doit être majeur (18 ans minimum).'
         );
     END IF;
@@ -123,7 +123,7 @@ BEGIN
 
   IF date_course <= SYSDATE THEN
     RAISE_APPLICATION_ERROR(
-      -20005,
+      -20205,
       'La course est en cours ou a déjà eu lieu'
     );
   END IF;
@@ -144,7 +144,7 @@ BEGIN
 
   IF register_status = 'Annulé' THEN
     RAISE_APPLICATION_ERROR(
-      -20006,
+      -20206,
       'La participation sur laquelle le parieur souhaite parier à été annulé'
     );
   END IF;
