@@ -23,10 +23,10 @@ COMPOUND TRIGGER
     INTO g_rows(g_idx).jockeyid,
          g_rows(g_idx).date_c,
          g_rows(g_idx).lieu
-    FROM Duo d
-    JOIN Participation p ON p.participationid = :NEW.participationid
-    JOIN Course c ON c.courseid = p.courseid
-    WHERE d.duoid = :NEW.duoid;
+    FROM Duo d, Participation p, Course c
+    WHERE d.duoid = :NEW.duoid AND 
+    p.participationid = :NEW.participationid AND
+     c.courseid = p.courseid;
 
     g_rows(g_idx).duoid := :NEW.duoid;
     g_rows(g_idx).participationid := :NEW.participationid;
@@ -38,11 +38,11 @@ COMPOUND TRIGGER
     FOR i IN 1 .. g_idx LOOP
       SELECT COUNT(*)
       INTO v_conflicts
-      FROM Inscription i2
-      JOIN Duo d2 ON i2.duoid = d2.duoid
-      JOIN Participation p2 ON i2.participationid = p2.participationid
-      JOIN Course c2 ON c2.courseid = p2.courseid
-      WHERE d2.jockeyid = g_rows(i).jockeyid
+      FROM Inscription i2, Duo d2, Participation p2, Course c2 
+      WHERE i2.duoid = d2.duoid
+        AND i2.participationid = p2.participationid
+        AND c2.courseid = p2.courseid
+        AND d2.jockeyid = g_rows(i).jockeyid
         AND c2.date_c = g_rows(i).date_c
         AND c2.lieu != g_rows(i).lieu
         AND i2.statut != 'Refusée'
