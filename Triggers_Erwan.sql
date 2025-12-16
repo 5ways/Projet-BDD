@@ -98,11 +98,34 @@ CREATE OR REPLACE TRIGGER trg_check_parieur_age
 BEFORE INSERT OR UPDATE ON Parieur
 FOR EACH ROW
 BEGIN
-    IF :NEW.datenaiss > ADD_MONTHS(SYSDATE, -216) THEN -- the user must be born 18years (216 months) ago
+    IF :new.datenaiss > ADD_MONTHS(SYSDATE, -216) THEN -- the user must be born 18years (216 months) ago
         RAISE_APPLICATION_ERROR(
           -20004,
           'Le parieur doit être majeur (18 ans minimum).'
         );
     END IF;
+END;
+/
+
+-- On peut annuler un pari uniquement si la course n’a pas encore été courue.
+CREATE OR REPLACE TRIGGER trg_manage_bet_status
+BEFORE INSERT OR UPDATE ON Paris
+FOR EACH ROW
+DECLARE
+  date_course Course.date_c%TYPE;
+BEGIN
+  -- Retrieve the date of the race the user bet on
+  SELECT c.date_c into date_course
+  FROM Course c, Paris pa, Participation p
+  WHERE :new.parisid = pa.parisid AND
+  pa.participationid = p.participationid AND
+  p.courseid = c.courseid;
+
+  IF date_course <= SYSDATE THEN
+    RAISE_APPLICATION_ERROR(
+      -20005,
+      'La course est en cours ou a déjà eu lieu'
+    );
+  END IF;
 END;
 /
