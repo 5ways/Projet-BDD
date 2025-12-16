@@ -92,3 +92,17 @@ BEGIN
     END IF;
 END;
 /
+
+-- Les individus de moins de 18 ans ne peuvent pas être des parieurs..
+CREATE OR REPLACE TRIGGER trg_check_parieur_age
+BEFORE INSERT OR UPDATE ON Parieur
+FOR EACH ROW
+BEGIN
+    IF :NEW.datenaiss > ADD_MONTHS(SYSDATE, -216) THEN -- the user must be born 18years (216 months) ago
+        RAISE_APPLICATION_ERROR(
+          -20004,
+          'Le parieur doit être majeur (18 ans minimum).'
+        );
+    END IF;
+END;
+/
