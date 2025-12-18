@@ -24,32 +24,34 @@ AND c.chevalid NOT IN (
 
 -- Le TOP 5 des chevaux les plus populaires, ceux qui ont suscité le plus grand nombre de paris.
 -- Les chevaux n'ayant pas de paris assignés ne seront pas inclus dans le résultat de la requête
-SELECT c.nom, count(*) as number_of_bet
-FROM Cheval c, Paris pa, Inscription i, Duo d, Participation p
-WHERE c.chevalid = d.chevalid AND
-d.duoid = i.duoid AND
-i.participationid = p.participationid AND
-p.participationid = pa.participationid
-GROUP BY c.nom
-ORDER BY number_of_bet DESC
-FETCH FIRST 5 ROWS ONLY;
+SELECT * FROM (
+    SELECT c.nom, count(*) as number_of_bet
+    FROM Cheval c, Paris pa, Inscription i, Duo d, Participation p
+    WHERE c.chevalid = d.chevalid AND
+    d.duoid = i.duoid AND
+    i.participationid = p.participationid AND
+    p.participationid = pa.participationid
+    GROUP BY c.nom
+    ORDER BY number_of_bet DESC
+) WHERE ROWNUM <= 5;
 
 -- Le TOP 5 des duos jockeys/chevaux ayant le plus de 1ère places, qui courent toujours en 2025.
-SELECT d.jockeyid, d.chevalid, count(*) as number_of_wins
-FROM Duo d, Inscription i, Participation p
-WHERE d.duoid = i.duoid AND
-i.participationid = p.participationid AND
-p.resultat = '1' AND
-i.duoid in ( -- verify if the duo is actually in the list of 2025 runners
-    SELECT i2.duoid
-    FROM Course co, Participation p2, Inscription i2
-    WHERE i2.participationid = p2.participationid AND
-    p2.courseid = co.courseid AND
-    co.date_c >= TO_DATE('2025-01-01', 'YYYY-MM-DD')
-)
-GROUP BY d.jockeyid, d.chevalid
-ORDER BY number_of_wins DESC
-FETCH FIRST 5 ROWS ONLY;
+SELECT * FROM (   
+    SELECT d.jockeyid, d.chevalid, count(*) as number_of_wins
+    FROM Duo d, Inscription i, Participation p
+    WHERE d.duoid = i.duoid AND
+    i.participationid = p.participationid AND
+    p.resultat = '1' AND
+    i.duoid in ( -- verify if the duo is actually in the list of 2025 runners
+        SELECT i2.duoid
+        FROM Course co, Participation p2, Inscription i2
+        WHERE i2.participationid = p2.participationid AND
+        p2.courseid = co.courseid AND
+        co.date_c >= TO_DATE('2025-01-01', 'YYYY-MM-DD')
+    )
+    GROUP BY d.jockeyid, d.chevalid
+    ORDER BY number_of_wins DESC
+) WHERE ROWNUM <= 5;
 
 -- Jockey de légende, ceux ayant gagné au moins 3 Grand Prix dans leur carrière.
 SELECT j.jockeyid, count(*) as number_of_wins
@@ -65,21 +67,23 @@ HAVING number_of_wins >= 3
 ORDER BY number_of_wins DESC;
 
 -- Le type de pari le plus rentable pour le parieur, celui qui a le plus de gain par rapport à sa probabilité d’être gagnant.
-SELECT p.typeparis, avg(i.cote) as côte_moyenne
-FROM Paris p, Participation par, Inscription i
-WHERE p.participationid = par.participationid AND
-par.participationid = i.participationid
-GROUP BY p.typeparis
-ORDER BY côte_moyenne DESC
-FETCH FIRST 1 ROWS ONLY;
+SELECT * FROM (
+    SELECT p.typeparis, avg(i.cote) as côte_moyenne
+    FROM Paris p, Participation par, Inscription i
+    WHERE p.participationid = par.participationid AND
+    par.participationid = i.participationid
+    GROUP BY p.typeparis
+    ORDER BY côte_moyenne DESC
+) WHERE ROWNUM = 1;
 
 -- Meilleur Race : Top 3 des races de chevaux avec le plus de 1ères places
-SELECT c.race, count(*) as number_of_wins
-FROM Cheval c, Duo d, Inscription i, Participation p
-WHERE c.chevalid = d.chevalid AND
-d.duoid = i.duoid AND
-i.participationid = p.participationid AND
-p.resultat = '1'
-GROUP BY c.race
-ORDER BY number_of_wins DESC
-FETCH FIRST 3 ROWS ONLY;
+SELECT * FROM (
+    SELECT c.race, count(*) as number_of_wins
+    FROM Cheval c, Duo d, Inscription i, Participation p
+    WHERE c.chevalid = d.chevalid AND
+    d.duoid = i.duoid AND
+    i.participationid = p.participationid AND
+    p.resultat = '1'
+    GROUP BY c.race
+    ORDER BY number_of_wins DESC
+) WHERE ROWNUM <= 3;
