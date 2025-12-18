@@ -10,7 +10,7 @@ d.jockeyid = j.jockeyid AND
 i.statut = 'Validé'
 ORDER BY c.date_c;
 
--- Fiche de Propriété et gains 
+-- Fiche de Propriété
 CREATE OR REPLACE VIEW fiche_proprietes AS
 SELECT p.prenom as Prenom_Propriétaire, p.nom as Nom_Propriétaire, c.nom as Nom_Cheval, a.part part_de_propriété
 FROM Proprietaire p, Cheval c, Appartient a
