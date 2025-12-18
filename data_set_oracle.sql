@@ -79,8 +79,7 @@ INTO Jockey VALUES (77, 'Tiepolo', 'Luca', 'Italien', 63.6, 'Trot', 0)
 INTO Jockey VALUES (78, 'Berg', 'Erik', 'Suedois', 62.9, 'Trot', 0)
 INTO Jockey VALUES (79, 'Silva', 'Carlos', 'Portugais', 60.8, 'Trot', 0)
 INTO Jockey VALUES (80, 'Johansson', 'Oskar', 'Suedois', 61.9, 'Trot', 0)
-SELECT 1 FROM dual;
-COMMIT;
+SELECT * FROM dual;
 
 
 INSERT ALL
@@ -164,8 +163,7 @@ INTO Cheval VALUES (77, 'Gaspar de Brion', DATE '2016-05-12', 'Trotteur Francais
 INTO Cheval VALUES (78, 'Happy Valley', DATE '2017-04-05', 'Trotteur Francais', 'F', 460.00, 'Trot', 0)
 INTO Cheval VALUES (79, 'Inmarosa', DATE '2018-03-30', 'Trotteur Francais', 'F', 455.00, 'Trot', 0)
 INTO Cheval VALUES (80, 'Ideal du Pommeau', DATE '2018-02-15', 'Trotteur Francais', 'M', 505.00, 'Trot', 0)
-SELECT 1 FROM dual;
-COMMIT;
+SELECT * FROM dual;
 
 
 INSERT ALL
@@ -209,8 +207,7 @@ INTO Entraineur VALUES (37, 'Malmqvist', 'Tomas', 'Suedois', 0)
 INTO Entraineur VALUES (38, 'Westerink', 'Richard', 'Hollandais', 0)
 INTO Entraineur VALUES (39, 'Roger', 'Sylvain', 'Francais', 0)
 INTO Entraineur VALUES (40, 'Nivard', 'Franck', 'Francais', 0)
-SELECT 1 FROM dual;
-COMMIT;
+SELECT * FROM dual;
 
 
 INSERT ALL
@@ -254,8 +251,7 @@ INTO Proprietaire VALUES (37, 'Scuderia Bivans', 'Somma', 'Antonio', 'Italien', 
 INTO Proprietaire VALUES (38, 'Stall Zet', 'Reden', 'Daniel', 'Suedois', 0)
 INTO Proprietaire VALUES (39, 'Courant AB', 'Strom', 'Anders', 'Suedois', 0)
 INTO Proprietaire VALUES (40, 'Stall Bryssel', NULL, NULL, 'Suedois', 0)
-SELECT 1 FROM dual;
-COMMIT;
+SELECT * FROM dual;
 
 INSERT ALL
 -- CHEVAUX GALOP (1-40)
@@ -395,8 +391,7 @@ INTO Organisateur VALUES (27, 'Société des Courses d''Angers', 'Mixte', 160000
 INTO Organisateur VALUES (28, 'Société des Courses de Caen', 'Trot', 2100000)
 INTO Organisateur VALUES (29, 'Société des Courses de Reims', 'Trot', 1400000)
 INTO Organisateur VALUES (30, 'Société des Courses d''Amiens', 'Trot', 1300000)
-SELECT 1 FROM dual;
-COMMIT;
+SELECT * FROM dual;
 
 
 INSERT ALL
@@ -462,7 +457,7 @@ INSERT ALL
   INTO Course VALUES (49, 'Prix de Bourgogne', TO_DATE('2024-12-29 15:15', 'YYYY-MM-DD HH24:MI'), 'Trot', 'Attelé', 2100, 2, 120000, 'Vincennes', 2)
   INTO Course VALUES (50, 'Prix de Belgique', TO_DATE('2025-01-12 15:15', 'YYYY-MM-DD HH24:MI'), 'Trot', 'Attelé', 2850, 2, 120000, 'Vincennes', 2)
 SELECT * FROM dual;
-COMMIT;
+
 
 
 INSERT ALL
@@ -666,8 +661,7 @@ INSERT ALL
   INTO Participation VALUES (198, 40, 3, 'Terminé')
   INTO Participation VALUES (199, 40, 4, 'Terminé')
   INTO Participation VALUES (200, 40, 5, 'Terminé')
-SELECT 1 FROM dual;
-COMMIT;
+SELECT * FROM dual;
 
 INSERT ALL
 -- Prix de l'Arc 2025 : GALOP
@@ -774,7 +768,6 @@ INSERT ALL
   INTO Duo VALUES (99, 71, 41, 38, 'Trot')
   INTO Duo VALUES (100, 52, 41, 30, 'Trot')
 SELECT * FROM dual;
-COMMIT;
 
 INSERT ALL
   -- COURSE 1 : GALOP
@@ -958,7 +951,11 @@ INSERT ALL
   INTO Paris VALUES (72, 30, 20, 'Simple Placé', 36, 'Perdu')
   INTO Paris VALUES (73, 30, 29, 'Simple Gagnant', 39, 'Perdu')
 SELECT * FROM dual;
+
+
+
 COMMIT;
+
 
 
 
