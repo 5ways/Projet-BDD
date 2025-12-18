@@ -152,7 +152,7 @@ END;
 /
 
 -- Un parieur ne peut pas parier un montant supérieur à celui de son solde.
-CREATE OR REPLACE TRIGGER trg_not_enough_money_for_the_bet
+CREATE OR REPLACE TRIGGER trg_bet_not_enough_money
 BEFORE INSERT OR UPDATE ON Paris
 FOR EACH ROW
 DECLARE
@@ -170,4 +170,54 @@ BEGIN
     );
   END IF;
 END;
+/
+
+-- L’organisateur ne peut pas dépenser plus que sa trésorerie.
+CREATE OR REPLACE TRIGGER trg_org_not_enough_money
+FOR INSERT OR UPDATE ON Course
+COMPOUND TRIGGER
+
+  -- 1. Declare a collection to store affected Organizer IDs
+  TYPE t_org_ids IS TABLE OF NUMBER INDEX BY PLS_INTEGER;
+  v_org_list t_org_ids;
+
+  AFTER EACH ROW IS
+  BEGIN
+    -- 2. Store the ID of the organizer being modified
+    v_org_list(:new.organisateurid) := :new.organisateurid;
+    
+    -- If updating and changing the organizer, track the old one too
+    IF UPDATING AND :old.organisateurid IS NOT NULL THEN
+        v_org_list(:old.organisateurid) := :old.organisateurid;
+    END IF;
+  END AFTER EACH ROW;
+
+  AFTER STATEMENT IS
+    v_sum_cashprize NUMBER;
+    v_org_balance   NUMBER;
+    v_idx           PLS_INTEGER;
+  BEGIN
+    -- 3. Loop through all organizers that were affected by the DML
+    v_idx := v_org_list.FIRST;
+    WHILE v_idx IS NOT NULL LOOP
+      
+      -- Get total cashprizes for this specific organizer
+      SELECT SUM(cashprize) INTO v_sum_cashprize
+      FROM Course
+      WHERE organisateurid = v_idx;
+
+      -- Get the balance
+      SELECT tresorerie INTO v_org_balance
+      FROM Organisateur
+      WHERE organisateurid = v_idx;
+
+      IF v_sum_cashprize > v_org_balance THEN
+        RAISE_APPLICATION_ERROR(-20208, 'Trésorerie insuffisante pour l''organisateur ID: ' || v_idx);
+      END IF;
+
+      v_idx := v_org_list.NEXT(v_idx);
+    END LOOP;
+  END AFTER STATEMENT;
+
+END trg_org_not_enough_money;
 /
