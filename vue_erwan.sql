@@ -17,3 +17,11 @@ FROM Proprietaire p, Cheval c, Appartient a
 WHERE a.proprietaireid = p.proprietaireid AND
 a.chevalid = c.chevalid
 ORDER BY Nom_Cheval;
+
+-- Statistiques de Paris par Parieur
+CREATE OR REPLACE VIEW statistiques_parieurs AS
+SELECT p.nom as nom_parieur, p.prenom as prenom_parieur, p.solde as solde_parieur, SUM(b.montant) as mise_total, COUNT(b.statut) as paris_gagné
+FROM Parieur p, Paris b
+WHERE p.parieurid = b.parieurid AND
+b.statut = 'Gagné'
+GROUP BY nom_parieur, prenom_parieur, solde_parieur;
